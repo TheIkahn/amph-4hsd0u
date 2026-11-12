@@ -13,6 +13,9 @@ title: "Mayuri"
 *📖 Party member*
 
 
+> [!quote] At a glance
+> Mayuri wakes most nights from visions of her own death, each one wearing a different face, while her past frays into two childhoods in two cities, neither of them certain. She chases a rumor of a Golden City that grants a seeker their deepest wish, hoping it might mend the fracture at her core, whether it heals her or finishes what the dreams keep promising.
+
 > [!info] 📋 Identity
 > | | |
 > | :-- | :-- |
@@ -36,7 +39,7 @@ title: "Mayuri"
 ## 🎯 Personal Quests
 
 > [!note] The Golden City
-> In a tavern, Mayuri overheard older travellers talking about a golden city hidden far beyond the known roads that shimmers in and out of reach. Some had glimpsed it in dreams; others swore the gods hid it. It gives whoever reaches it what they most desire, and nobody who sets out for it comes back. Mayuri set out to find it anyway.
+> In a tavern, Mayuri overheard older travellers talking about a golden city hidden far beyond the known roads that shimmers in and out of reach. Some had glimpsed it in dreams; others swore the gods hid it. It gives whoever reaches it what they most desire, and nobody who sets out for it comes back. Mayuri set out to find it anyway, whether it killed her or cured her.
 >
 > - [ ] Learn whether anyone in Amphoreus has heard of the Golden City.
 > - [ ] Find the Golden City.

@@ -5,7 +5,7 @@ Usage: python sync_site.py <vault Amphoreus folder> <quartz content folder>
 What it does to the site copy (the vault itself is never changed):
 - skips videos and canvases
 - moves everything in "Lorekeeper Notes" up one level so the sidebar is shorter
-- hides character secrets (Delmore's Norgorber lines, Mayuri's death-vision blurb)
+- hides character secrets (Delmore's Norgorber lines)
 - turns each Lorekeeper page's "# Heading" into its page title
 - drops the portrait under the banner, since the banner already shows it
 - splits Journal.md into one page per session, in Act / Arc folders
@@ -22,10 +22,6 @@ TITLES = {'A_Travelers_Guide_to_the_Light_Calendar.md': "A Traveler's Guide to t
 def scrub(rel, text):
     if rel.endswith('Party/Delmore.md'):
         text = '\n'.join(l for l in text.split('\n') if 'norgorber' not in l.lower()) + '\n'
-    if rel.endswith('Party/Mayuri.md'):
-        text = re.sub(r'> \[!quote\] At a glance\n> [^\n]*\n\n', '', text)
-        text = text.replace(' Mayuri set out to find it anyway, whether it killed her or cured her.',
-                            ' Mayuri set out to find it anyway.')
     return text
 
 
