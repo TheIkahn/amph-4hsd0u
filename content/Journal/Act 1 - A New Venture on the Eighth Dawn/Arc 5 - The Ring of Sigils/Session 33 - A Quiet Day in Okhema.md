@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 5: The Ring of Sigils (Session 33-37)*
 
-Pyrodas, 27 Month of Joy, 4931 (Middas, 27 Phareon, 808)
+Mnemodas, 27 Month of Joy, 4931 (Astardas, 27 Phareon, 808)
 Franzen got MVP 
 Who the fuck cares about weather 
 

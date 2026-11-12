@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 3: Gathering Threads (Session 18-24)*
 
-Selenodas, 21 Month of Joy, 4931 - Selenodas, 22 Month of Joy, 4931 (Wevdas, 21 Phareon, 808 - Wevdas, 22 Phareon, 808)
+Selenodas, 21 Month of Joy, 4931 - Eosdas, 22 Month of Joy, 4931 (Wevdas, 21 Phareon, 808 - Mortdas, 22 Phareon, 808)
 Franzen Got MVP
 Overcast, Humidity 41%, Precipitation 7%, Wind 9 m/s
 
@@ -18,7 +18,7 @@ Sir Caerwyn is gathering up folks to hunt an alpha Behir which is currently halt
 We learn that Behir are an invasive species to Amphoreus and thus brand new so no books have been written on them. Mayuri begrudgingly agrees and the party sets off to prepare to fight this Alpha Behir.
 
 - - - 
-Selenodas, 22 Month of Joy, 4931 (Wevdas, 22 Phareon, 808)
+Eosdas, 22 Month of Joy, 4931 (Mortdas, 22 Phareon, 808)
 Partly Cloudy, Humidity 49%, Percipitation 8%, Wind 6 m/s
 
 Kenkai receives a Mnemonic Seed from Franzen and it allows Kenkai to read as he is viewing the memories of others who can read, but only while he is holding this seed. We head out towards Janusopolis. While getting there we see some Caligni in our path while attempting to stealth passed them Franzen Trips down a hill and falls in front of them. due to language barriers none of us can talk to the Caligni, Kenkai casts Translate which allows us to talk to them. we learn one of them is 4th in line to the boss of the Amphoreus sect of the Caligni. They had no idea what a behir is but they knew there was a ton of loot on the inside of the cave. the party does not intervene in their affairs and allows them to continue. the party questions if they just sentenced a bunch of people to die. we decide to press forward. 

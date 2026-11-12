@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 5: The Ring of Sigils (Session 33-37)*
 
-Pyrodas, 28 Month of Joy, 4931 (Middas, 28 Phareon, 808)
+Selenodas, 28 Month of Joy, 4931 (Wevdas, 28 Phareon, 808)
 Zuzros got MVP 
 Partly Cloudy, Humidity 75%, Precipitation 38%, Wind 13 m/s
 

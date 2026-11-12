@@ -188,27 +188,18 @@ DATE_RE = re.compile(r'(\d{1,2})\s+Month of\s+([A-Za-z]+),?\s*(\d{3,5})')
 
 
 def session_days(lines):
-    """In-world days a session covers, from the date line(s) right under its heading."""
+    """The in-world day a session is played on: the last date in its date line.
+
+    A range like "29 Month of Joy - 1 Month of Everday" only shows time passing;
+    the session itself happens on the final day.
+    """
     head = [l for l in lines if l.strip()][:3]
     found = []
     for l in head:
         for d, m, y in DATE_RE.findall(l):
             if m.lower() in LC_MONTH_NUM:
                 found.append((int(y), LC_MONTH_NUM[m.lower()], int(d)))
-    if not found:
-        return []
-    a, b = min(found), max(found)
-    out, cur = [], a
-    while cur <= b and len(out) < 40:
-        out.append(cur)
-        y, m, d = cur
-        d += 1
-        if d > LC_DAYS_IN_MONTH:
-            d, m = 1, m + 1
-        if m >= 12:
-            m, y = 0, y + 1
-        cur = (y, m, d)
-    return out
+    return [max(found)] if found else []
 
 
 def session_weather(lines):
