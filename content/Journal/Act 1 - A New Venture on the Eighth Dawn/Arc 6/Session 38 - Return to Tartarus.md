@@ -9,13 +9,13 @@ tags: [session]
 ---
 *Arc 6 (Session 38-)*
 
-Mortdas, 1 Calantheion, 808 (Eosdas, 1 Month of Everday, 4931)
+Eosdas, 29 Month of Joy, 4931 - Pyrodas, 1 Month of Everday, 4931 (Mortdas, 29 Phareon, 808 - Middas, 1 Calantheion, 808)
 Yuichi got MVP 
 Partly Cloudy, Humidity 75%, Precipitation 30%, Wind 8 m/s
 
 Downtime events happened.
 
-We flash back to 2 days ago: Kenkai and Franzen are tearing up the garden, Zuzros, who has been tending to the garden for the past week, walks in to see the mess. Kenkai explains that the garden was in a terrible state and needed to be replanted properly, also giving him chance to plant new things in the garden. Kenkai apologizes for ripping it up without warning. Stonemelon, Brocolli, Carrots, Onions, etc. Kenkai and Zuzros get into a squabble about what the difference between a god and a titan. Zuzros corrects some knowledge to Kenkai about Terravox being the chrysos heir to Georios. 
+We flash back to 2 days ago (Geodas, 30 Month of Joy): Kenkai and Franzen are tearing up the garden, Zuzros, who has been tending to the garden for the past week, walks in to see the mess. Kenkai explains that the garden was in a terrible state and needed to be replanted properly, also giving him chance to plant new things in the garden. Kenkai apologizes for ripping it up without warning. Stonemelon, Brocolli, Carrots, Onions, etc. Kenkai and Zuzros get into a squabble about what the difference between a god and a titan. Zuzros corrects some knowledge to Kenkai about Terravox being the chrysos heir to Georios. 
 
 back to the present, Carewyn and Yuichi went out to the temple to add our camps there in advance so we can descend down Tartarus again. the rest of us are getting up to get there. Kenkai finds a blood orange tea with honeydew in the garden not sure whose it is, he just ends up drinking it. It was a pleasant drink.
 

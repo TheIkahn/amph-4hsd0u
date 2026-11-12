@@ -9,8 +9,9 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Mortdas, 8 Phareon, 1E 808 (it is overcast) - Anardas 10 Phareon, 1E 808 (Eosdas, 8 Month of Joy, 4931 - Hydadas, 10 Month of Joy, 4931)
+Eosdas, 8 Month of Joy, 4931 - Hydadas, 10 Month of Joy, 4931 (Mortdas, 8 Phareon, 1E 808 - Anardas 10 Phareon, 1E 808) 
 Kenkai got MVP award. 
+it is overcast
 
 after felling the last person another minute past and the repairs were complete. we left the place in a better spot. while we are leaving, Pell turns to Damar “they are really strong maybe they can take on a Chrysos Heir”
 In Terms of Strength

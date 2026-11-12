@@ -9,8 +9,9 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Mortdas, 8 Phareon, 1E 808 (Eosdas, 8 Month of Joy, 4931) (it is overcast)
+Eosdas, 8 Month of Joy, 4931 (Mortdas, 8 Phareon, 1E 808)
 Franzen got MVP award. 
+it is overcast
 
 picking back up from the fight in previous session. The Furiae Warrior misses its Collision of the Third Orbit. this is all we did.
 

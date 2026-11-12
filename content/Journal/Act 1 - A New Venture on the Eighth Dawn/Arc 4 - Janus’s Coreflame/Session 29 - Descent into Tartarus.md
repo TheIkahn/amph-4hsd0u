@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 4: Janus’s Coreflame (Session 25-32)*
 
-Middas, 25 Phareon, 808 (Pyrodas, 25 Month of Joy, 4931)
+Pyrodas, 25 Month of Joy, 4931 (Middas, 25 Phareon, 808)
 Franzen Bonateli got MVP 
 Partly Cloudy, Humidity 74%, Precipitation 48%, Wind 5m/s 
 

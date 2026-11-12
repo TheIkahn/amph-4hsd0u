@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 3: Gathering Threads (Session 18-24)*
 
-Wevdas, 22 Phareon, 808 (Selenodas, 22 Month of Joy, 4931)
+Selenodas, 22 Month of Joy, 4931 (Wevdas, 22 Phareon, 808)
 Franzen got MVP
 Partly Cloudy, Humidity 64%, Precipitation 41%, Wind 9 m/s
 

@@ -60,4 +60,4 @@ Every session so far, newest at the bottom.
 - [[Journal/Act 1 - A New Venture on the Eighth Dawn/Arc 5 - The Ring of Sigils/Session 37 - The Horologion|Session 37: The Horologion]] · 11/3/26 · *28 Joy*
 
 ### Arc 6 (Session 38-)
-- [[Journal/Act 1 - A New Venture on the Eighth Dawn/Arc 6/Session 38 - Return to Tartarus|Session 38: Return to Tartarus]] · 11/10/26 · *1 Everday*
+- [[Journal/Act 1 - A New Venture on the Eighth Dawn/Arc 6/Session 38 - Return to Tartarus|Session 38: Return to Tartarus]] · 11/10/26 · *29 Joy*

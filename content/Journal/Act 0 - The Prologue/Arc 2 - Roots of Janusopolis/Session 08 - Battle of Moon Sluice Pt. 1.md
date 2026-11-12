@@ -9,8 +9,9 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Mortdas, 8 Phareon, 1E 808 (Eosdas, 8 Month of Joy, 4931) (it is overcast)
+Eosdas, 8 Month of Joy, 4931 (Mortdas, 8 Phareon, 1E 808) 
 Kenkai got MVP award. 
+it is overcast
 
 Mayuri wakes up early realizing that there is no food decides to go to the market. Sora goes along with her and together they buy eggs, bacon and some arrows. Kenkai decides to do the dishes. Franzen talks to Kenkai about wanting to get picked fish. 
 

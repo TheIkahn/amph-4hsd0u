@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 3: Gathering Threads (Session 18-24)*
 
-Astardas, 13 Phareon, 808 (Mnemodas, 13 Month of Joy, 4931)
+Mnemodas, 13 Month of Joy, 4931 (Astardas, 13 Phareon, 808)
 Kenkai got MVP 
 
 Sora and Velki have officially left the party now to travel their own path (Left the campaign) We go back to the Trilamp house (Caerwyn's thoughts: Peculiar structure, i wonder whom built it?) The party rest (Most long rest and return to full HP).  

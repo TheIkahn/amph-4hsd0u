@@ -165,7 +165,7 @@ def split_journal(text, out):
 
 # ---------- Light Calendar ----------
 # From "A Traveler's Guide to the Light Calendar": 12 months of 31 days, 7-day weeks.
-# Every dated journal entry fits weeks that restart on Eosdas at the start of each month.
+# Weeks run straight on across months and years; the journal fixes 1 Month of Joy, 4931 as an Eosdas.
 LC_MONTHS = [  # (Amphorean, Astrean, season, patron)
     ('Gate', 'Eirostus', 'Fate', 'Janus'), ('Balance', 'Tharmion', 'Fate', 'Talanton'),
     ('Evernight', 'Elumir', 'Fate', 'Oronyx'), ('Cultivation', 'Ysil', 'Pillar', 'Georios'),
@@ -219,15 +219,22 @@ def session_weather(lines):
     return ''
 
 
-def lc_weekday(day):
-    return (day - 1) % 7
+LC_ANCHOR = (4931, 4, 1)  # an Eosdas
+
+
+def lc_ordinal(y, m, d):
+    return y * 12 * LC_DAYS_IN_MONTH + m * LC_DAYS_IN_MONTH + (d - 1)
+
+
+def lc_weekday(y, m, d):
+    return (lc_ordinal(y, m, d) - lc_ordinal(*LC_ANCHOR)) % 7
 
 
 def lc_name(day_tuple, astrean=False):
     y, m, d = day_tuple
     if astrean:
-        return f'{LC_ASTREAN_DAYS[lc_weekday(d)]}, {d} {LC_MONTHS[m][1]}'
-    return f'{LC_DAYS[lc_weekday(d)]}, {d} Month of {LC_MONTHS[m][0]}, {y}'
+        return f'{LC_ASTREAN_DAYS[lc_weekday(y, m, d)]}, {d} {LC_MONTHS[m][1]}'
+    return f'{LC_DAYS[lc_weekday(y, m, d)]}, {d} Month of {LC_MONTHS[m][0]}, {y}'
 
 
 def lc_short(day_tuple):
@@ -272,10 +279,11 @@ def calendar_page(sessions):
                 busy = any(k[0] == y and k[1] == mi for k in by_day)
                 cells = ''.join(f'<span class="lc-wd{" rest" if i == 6 else ""}" title="{LC_DAYS[i]} ({LC_ASTREAN_DAYS[i]})">'
                                 f'{LC_DAYS[i][:2]}</span>' for i in range(7))
+                cells += '<span class="lc-pad"></span>' * lc_weekday(y, mi, 1)
                 for d in range(1, LC_DAYS_IN_MONTH + 1):
                     key = (y, mi, d)
                     cls = ['lc-day']
-                    if lc_weekday(d) == 6:
+                    if lc_weekday(y, mi, d) == 6:
                         cls.append('rest')
                     if key == today:
                         cls.append('now')
@@ -308,7 +316,7 @@ def calendar_page(sessions):
             'banner-y: 30', '---',
             'The year in Amphoreus runs on the Light Calendar, Kephale\'s gift to humanity: twelve months '
             'of 31 days, each kept by a Titan, in four divine seasons. The week starts on **Eosdas** and '
-            'rests on **Selenodas**. Gold days are the ones the party has lived through; click one to see '
+            'rests on **Selenodas**, running straight on from one month into the next. Gold days are the ones the party has lived through; click one to see '
             'which sessions happened then.',
             '',
             "For the hours of the day and the Astrean names, see [[A_Travelers_Guide_to_the_Light_Calendar|"

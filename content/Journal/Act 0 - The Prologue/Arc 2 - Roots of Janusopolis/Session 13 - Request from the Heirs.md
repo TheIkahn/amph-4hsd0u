@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Anardas 10 Phareon, 1E 808 (Hydadas, 10 Month of Joy, 4931)
+Hydadas, 10 Month of Joy, 4931 (Anardas 10 Phareon, 1E 808)
 Caledor got the MVP
 Overcast, 74% humidity, 45% precipitation, 11MPH winds
 

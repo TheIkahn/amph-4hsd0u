@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 5: The Ring of Sigils (Session 33-37)*
 
-Middas, 28 Phareon, 808 (Pyrodas, 28 Month of Joy, 4931)
+Pyrodas, 28 Month of Joy, 4931 (Middas, 28 Phareon, 808)
 No MVP, No homework last session
 Partly Cloudy, Humidity 84%, Precipitation 26%, Wind 14 m/s
 

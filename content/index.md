@@ -12,7 +12,7 @@ A record of our campaign in **Amphoreus**, a dying land of twelve Titans, where 
 > [[Journal/index|Read the whole journal →]]
 
 > [!calendar] Today in Amphoreus
-> **Eosdas, 1 Month of Everday, 4931** · [[Calendar|Open the Light Calendar →]]
+> **Pyrodas, 1 Month of Everday, 4931** · [[Calendar|Open the Light Calendar →]]
 
 ## The Party
 

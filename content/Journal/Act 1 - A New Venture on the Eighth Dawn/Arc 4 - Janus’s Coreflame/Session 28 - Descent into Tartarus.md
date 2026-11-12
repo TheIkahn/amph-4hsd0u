@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 4: Janus’s Coreflame (Session 25-32)*
 
-Middas, 25 Phareon, 808 (Pyrodas, 25 Month of Joy, 4931)
+Pyrodas, 25 Month of Joy, 4931 (Middas, 25 Phareon, 808)
 Kenkai Ventura got MVP
 Partly Cloudy, Humidity 67%, Precipitation 33%, Wind 8 m/s
 

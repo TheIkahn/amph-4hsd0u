@@ -9,8 +9,9 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Astardas, 6 Phareon, 1E 808 (Mnemodas, 6 Month of Joy, 4931)
+Mnemodas, 6 Month of Joy, 4931 (Astardas, 6 Phareon, 1E 808)
 No MVP, First Session
+
 we are at the Sunlit Gate of Okhema, Amphoreus. Sora, meets up with Velkhi Nightsnout and ask about a friend named wilson she is trying to find, knowing that Velkhi knows something about Wilson. Caledor and Youichi have known each other for years and are thus next to each other. Kenkai and Franzen are hunter brothers coming here after “The Hunt”.
 
 Mayuri is in front of the line. Voice of measure, Lamp Ascent , Sigil Step. Mayuri does the Sigil Step trial and deceives the guards, gaining the Right of Petition. Caledor goes next and does the Lamp Ascent choosing to use his athletics, after a slip up he does it right gaining the Right of Petition. Yuichi Highrose is next and does the Voice of measure using his Diplomacy, however he gains the Supplicant’s Brand which makes the guards watch him more closely. he is not allowed to brandish weapons in temples. Sora does the Voice of Measure, already having done this before she knows what to say gaining the right of petition. Velkhi Nightsnout also does the voice of measure, and also succeeds flawlessly gaining the right of petition. Kenkai Ventura does the lamp ascent and succeeds gaining the Right of Petition. Franzen Bonotelli does the Lamp Ascent, he spills a tiny bit meaning he gains the Supplicant’s Brand, his punishment is do not disrespect Deities in any way shape and form. Mayuri Notices the rest of the group and jots it down in a book. Youichi approaches Franzen as they both share a brand. Caledor, Frazen, Yuichi and Frazen all strike up a conversation. 

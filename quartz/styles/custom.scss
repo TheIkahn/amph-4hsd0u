@@ -98,17 +98,20 @@ article h2 {
   font-size: 1rem;
 }
 
-// Amphoreus background: Kephale glow at the top, script glyphs along the bottom
+// Amphoreus background: infinity art (dark) / Kephale sky (light), with a band of
+// Amphoreus script pinned to the bottom of the window
 body {
   background:
-    linear-gradient(rgba(18, 23, 34, 0.25), rgba(18, 23, 34, 0.25)),
-    url("static/amphoreus-bg.jpg") center top / cover fixed,
+    url("static/amphoreus-script.png") left bottom / auto 110px repeat-x fixed,
+    linear-gradient(rgba(18, 23, 34, 0.30), rgba(18, 23, 34, 0.55)),
+    url("static/amphoreus-bg-dark.jpg") center / cover no-repeat fixed,
     #121722;
 }
 :root[saved-theme="light"] body {
   background:
-    linear-gradient(rgba(246, 240, 226, 0.86), rgba(246, 240, 226, 0.86)),
-    url("static/amphoreus-bg.jpg") center top / cover fixed,
+    url("static/amphoreus-script.png") left bottom / auto 110px repeat-x fixed,
+    linear-gradient(rgba(246, 240, 226, 0.62), rgba(246, 240, 226, 0.80)),
+    url("static/amphoreus-bg-light.jpg") center / cover no-repeat fixed,
     #f6f0e2;
 }
 // keep the reading column solid enough to read comfortably

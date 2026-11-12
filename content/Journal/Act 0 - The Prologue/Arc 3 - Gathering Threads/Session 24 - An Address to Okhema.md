@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 3: Gathering Threads (Session 18-24)*
 
-Musedas, 23 Phareon, 808 (Geodas, 23 Month of Joy, 4931)
+Geodas, 23 Month of Joy, 4931 (Musedas, 23 Phareon, 808)
 Zuzros Rhiesis got MVP
 Partly Cloudy, Humidity 69%, Precipitation 21%, Wind 13 m/s
 

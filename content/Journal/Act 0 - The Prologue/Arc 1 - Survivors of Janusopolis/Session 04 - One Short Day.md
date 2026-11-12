@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Astardas, 6 Phareon, 1E 808 - Wevdas, 7 Phareon, 1E 808 (Mnemodas, 6 Month of Joy, 4931 - Selenodas, 7 Month of Joy, 4931)
+Mnemodas, 6 Month of Joy, 4931 - Selenodas, 7 Month of Joy, 4931 (Astardas, 6 Phareon, 1E 808 - Wevdas, 7 Phareon, 1E 808)
 Kenkai got the MVP award.
 
 we hop off the train to Okhema and immediately notice the warm hues and colors. A huge crowd is waiting for us as they are amazed to how we were able to survive. Kalyx is guiding us through the crowd when we get to registration. Sora was already written down. we are being escorted to the tri-lamp house, a guest house with 12 rooms. A man with a large purple hat then greets us. a messenger will come by in a couple of hours to grab us. someone special wants to have a word with us. after a while a cleric comes by to heal Franzen of his deafness. Yuichi who was asleep awaken by an inorganic autonomous maid and everyone is freaked out by it. 
