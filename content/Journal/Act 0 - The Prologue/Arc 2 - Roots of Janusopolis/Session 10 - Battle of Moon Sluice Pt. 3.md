@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Mortdas, 8 Phareon, 1E 808 (it is overcast)
+Mortdas, 8 Phareon, 1E 808 (Eosdas, 8 Month of Joy, 4931) (it is overcast)
 Yuichi got MVP award. 
 
 Part 3 of this combat. we get 10 minutes before the start of the third wave. 4 more Furiae Warriors, 4 Furiae Archers, Furiae Praetor, 1 Furiae Troupe, Furiae Philosopher (new enemy).

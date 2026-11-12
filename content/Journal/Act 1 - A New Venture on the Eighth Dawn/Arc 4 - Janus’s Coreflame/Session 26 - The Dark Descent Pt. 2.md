@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 4: Janus’s Coreflame (Session 25-32)*
 
-Pyrodas, 25 Month of Joy, 4931
+Middas, 25 Phareon, 808 (Pyrodas, 25 Month of Joy, 4931)
 Ulixies got MVP
 Partly Cloudy, Humidity 87%, Precipitation 30%, Wind 14 m/s
 

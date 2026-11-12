@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 3: Gathering Threads (Session 18-24)*
 
-Selenodas, 21 Month of Joy, 4931
+Wevdas, 21 Phareon, 808 (Selenodas, 21 Month of Joy, 4931)
 Kenkai Got MVP
 Overcast, Humidity 75%, precipitation 46%, wind 12 m/s (Golden Moon)
 

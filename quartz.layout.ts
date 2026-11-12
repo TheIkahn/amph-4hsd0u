@@ -6,7 +6,7 @@ const explorerOptions = {
   title: "Contents",
   filterFn: (node: any) => !["tags", "images"].includes(node.slugSegment.toLowerCase()),
   sortFn: (a: any, b: any) => {
-    const order = ["journal", "party", "party-quests", "important-characters", "places-of-interest"]
+    const order = ["journal", "calendar", "party", "party-quests", "important-characters", "places-of-interest"]
     const ia = order.indexOf(a.slugSegment.toLowerCase())
     const ib = order.indexOf(b.slugSegment.toLowerCase())
     if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib)

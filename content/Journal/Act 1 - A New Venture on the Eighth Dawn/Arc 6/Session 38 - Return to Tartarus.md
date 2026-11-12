@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 6 (Session 38-)*
 
-Eosdas, 1 Month of Everday, 4931 
+Mortdas, 1 Calantheion, 808 (Eosdas, 1 Month of Everday, 4931)
 Yuichi got MVP 
 Partly Cloudy, Humidity 75%, Precipitation 30%, Wind 8 m/s
 

@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Astardas, 6 Phareon, 1E
+Astardas, 6 Phareon, 1E 808 (Mnemodas, 6 Month of Joy, 4931)
 No MVP, First Session
 we are at the Sunlit Gate of Okhema, Amphoreus. Sora, meets up with Velkhi Nightsnout and ask about a friend named wilson she is trying to find, knowing that Velkhi knows something about Wilson. Caledor and Youichi have known each other for years and are thus next to each other. Kenkai and Franzen are hunter brothers coming here after “The Hunt”.
 

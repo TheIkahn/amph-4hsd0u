@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Astardas, 13 Phareon, 808
+Astardas, 13 Phareon, 808 (Mnemodas, 13 Month of Joy, 4931)
 Franzen got the MVP
 Overcast, Humidity 67%, precipitation 24%, wind 8 m/s
 

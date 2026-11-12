@@ -11,6 +11,9 @@ A record of our campaign in **Amphoreus**, a dying land of twelve Titans, where 
 > 
 > [[Journal/index|Read the whole journal →]]
 
+> [!calendar] Today in Amphoreus
+> **Eosdas, 1 Month of Everday, 4931** · [[Calendar|Open the Light Calendar →]]
+
 ## The Party
 
 <div class="party-grid"><a class="party-card internal" href="Party/Caledor"><img src="Images/Caledor-icon.png" alt=""><span>Caledor</span></a><a class="party-card internal" href="Party/Delmore"><img src="Images/Delmore-icon.png" alt=""><span>Delmore</span></a><a class="party-card internal" href="Party/Franzen-Bonotelli"><img src="Images/Franzen-Bonotelli-icon.png" alt=""><span>Franzen Bonotelli</span></a><a class="party-card internal" href="Party/Kenkai-Ventura"><img src="Images/Kenkai-Ventura-icon.png" alt=""><span>Kenkai Ventura</span></a><a class="party-card internal" href="Party/Mayuri"><img src="Images/Mayuri-icon.png" alt=""><span>Mayuri</span></a><a class="party-card internal" href="Party/Sir-Caerwyn-Kyrn"><img src="Images/Sir-Caerwyn-Kyrn-icon.png" alt=""><span>Sir Caerwyn Kyrn</span></a><a class="party-card internal" href="Party/Yuichi-Highrose"><img src="Images/Yuichi-Highrose-icon.png" alt=""><span>Yuichi Highrose</span></a><a class="party-card internal" href="Party/Zuzros-Rhiesis"><img src="Images/Zuzros-Rhiesis-icon.png" alt=""><span>Zuzros Rhiesis</span></a></div>
@@ -27,4 +30,4 @@ A record of our campaign in **Amphoreus**, a dying land of twelve Titans, where 
 - **Chrysos Heirs:** [[Aglaea]] · [[Anaxagoras]] · [[Castorice]] · [[Cerydra]] · [[Cipher]] · [[Hyacinthia]] · [[Hysilens]] · [[Mydeimos]] · [[Phainon]] · [[Terravox]] · [[Tribios]]
 - **Titans:** [[Cerces]] · [[Georios]] · [[Janus]] · [[Kephale]] · [[Talanton]]
 - **Skyfire Dragons:** [[Commander Deva]] · [[Ione Kalyx]] · [[Jossum]]
-- **Reference:** [[A_Travelers_Guide_to_the_Light_Calendar|A Traveler's Guide to the Light Calendar]]
+- **Reference:** [[Calendar|The Light Calendar]] · [[A_Travelers_Guide_to_the_Light_Calendar|A Traveler's Guide to the Light Calendar]]

@@ -9,12 +9,16 @@ What it does to the site copy (the vault itself is never changed):
 - turns each Lorekeeper page's "# Heading" into its page title
 - drops the portrait under the banner, since the banner already shows it
 - splits Journal.md into one page per session, in Act / Arc folders
+  (a third argument can point at a newer Journal.md, e.g. the one in personal notes)
+- builds the Light Calendar page from each session's in-world date
 - writes the home page
 """
 import os, re, shutil, sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 src, dst = sys.argv[1], sys.argv[2]
+# optional: a newer Journal.md to use instead of the vault's copy (the user's personal notes)
+JOURNAL = sys.argv[3] if len(sys.argv) > 3 and os.path.exists(sys.argv[3]) else None
 SKIP_EXT = {'.mp4', '.canvas'}
 TITLES = {'A_Travelers_Guide_to_the_Light_Calendar.md': "A Traveler's Guide to the Light Calendar"}
 
@@ -105,6 +109,11 @@ def split_journal(text, out):
         if cur is not None:
             cur['lines'].append(line)
 
+    # drop placeholders for sessions not played yet (Session Thirty-Nine: [])
+    sessions = [s for s in sessions if s['name'].replace('[]', '').strip()]
+    for s in sessions:
+        s['days'] = session_days(s['lines'])
+
     def folder(label):
         # "Act 0: The Prologue (Session 1-24)" -> "Act 0 - The Prologue"
         label = re.sub(r'\s*\(Session[^)]*\)', '', label)
@@ -148,13 +157,171 @@ def split_journal(text, out):
         if s['arc'] != last_arc:
             arc_heading = re.sub(r':?\s*\[\]', '', s['arc'] or '')
             lines += ['', '### ' + arc_heading]; last_arc = s['arc']
-        lines.append(f"- [[{s['path']}|{s['title']}]]" + (f" · {s['date']}" if s['date'] else ''))
+        when = f" · *{lc_short(s['days'][0])}*" if s.get('days') else ''
+        lines.append(f"- [[{s['path']}|{s['title']}]]" + (f" · {s['date']}" if s['date'] else '') + when)
     open(os.path.join(out, 'Journal', 'index.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
     return sessions
 
 
+# ---------- Light Calendar ----------
+# From "A Traveler's Guide to the Light Calendar": 12 months of 31 days, 7-day weeks.
+# Every dated journal entry fits weeks that restart on Eosdas at the start of each month.
+LC_MONTHS = [  # (Amphorean, Astrean, season, patron)
+    ('Gate', 'Eirostus', 'Fate', 'Janus'), ('Balance', 'Tharmion', 'Fate', 'Talanton'),
+    ('Evernight', 'Elumir', 'Fate', 'Oronyx'), ('Cultivation', 'Ysil', 'Pillar', 'Georios'),
+    ('Joy', 'Phareon', 'Pillar', 'Phagousa'), ('Everday', 'Calantheion', 'Pillar', 'Aquila'),
+    ('Freedom', 'Velkris', 'Creation', 'Kephale'), ('Reaping', 'Dusmir', 'Creation', 'Cerces'),
+    ('Weaving', 'Glymerion', 'Creation', 'Mnestia'), ('Strife', 'Nerastein', 'Calamity', 'Nikador'),
+    ('Mourning', 'Selenir', 'Calamity', 'Thanatos'), ('Fortune', 'Thanareth', 'Calamity', 'Zagreus'),
+]
+LC_DAYS = ['Eosdas', 'Geodas', 'Hydadas', 'Pyrodas', 'Aerodas', 'Mnemodas', 'Selenodas']
+LC_ASTREAN_DAYS = ['Mortdas', 'Musedas', 'Anardas', 'Middas', 'Horudas', 'Astardas', 'Wevdas']
+LC_SEASONS = {
+    'Fate': 'The year begins: quiet, new contracts and new starts. Evernight is the closest thing to winter.',
+    'Pillar': "Planting, abundance and the year's brightest light. Everday is the hottest stretch.",
+    'Creation': "The harvest months: Kephale's rest, Cerces' labor and Mnestia's festivals of memory.",
+    'Calamity': "The year closes: storage, gladiatorial games, the burial of the dead and Zagreus' Spirit Day.",
+}
+LC_MONTH_NUM = {m[0].lower(): i for i, m in enumerate(LC_MONTHS)}
+LC_DAYS_IN_MONTH = 31
+DATE_RE = re.compile(r'(\d{1,2})\s+Month of\s+([A-Za-z]+),?\s*(\d{3,5})')
+
+
+def session_days(lines):
+    """In-world days a session covers, from the date line(s) right under its heading."""
+    head = [l for l in lines if l.strip()][:3]
+    found = []
+    for l in head:
+        for d, m, y in DATE_RE.findall(l):
+            if m.lower() in LC_MONTH_NUM:
+                found.append((int(y), LC_MONTH_NUM[m.lower()], int(d)))
+    if not found:
+        return []
+    a, b = min(found), max(found)
+    out, cur = [], a
+    while cur <= b and len(out) < 40:
+        out.append(cur)
+        y, m, d = cur
+        d += 1
+        if d > LC_DAYS_IN_MONTH:
+            d, m = 1, m + 1
+        if m >= 12:
+            m, y = 0, y + 1
+        cur = (y, m, d)
+    return out
+
+
+def session_weather(lines):
+    for l in [l for l in lines if l.strip()][:5]:
+        if re.search(r'humidity|precipitation|overcast', l, re.I):
+            m = re.search(r'\(([^()]*overcast[^()]*)\)', l, re.I)
+            return clean(m.group(1) if m else l)
+    return ''
+
+
+def lc_weekday(day):
+    return (day - 1) % 7
+
+
+def lc_name(day_tuple, astrean=False):
+    y, m, d = day_tuple
+    if astrean:
+        return f'{LC_ASTREAN_DAYS[lc_weekday(d)]}, {d} {LC_MONTHS[m][1]}'
+    return f'{LC_DAYS[lc_weekday(d)]}, {d} Month of {LC_MONTHS[m][0]}, {y}'
+
+
+def lc_short(day_tuple):
+    y, m, d = day_tuple
+    return f'{d} {LC_MONTHS[m][0]}'
+
+
+def lc_anchor(day_tuple):
+    y, m, d = day_tuple
+    return f'd-{y}-{LC_MONTHS[m][0].lower()}-{d}'
+
+
+def session_url(s):
+    return '/'.join(slugify_seg(p) for p in s['path'].split('/'))
+
+
+def calendar_page(sessions):
+    by_day = {}
+    for s in sessions:
+        for day in s.get('days', []):
+            by_day.setdefault(day, []).append(s)
+    if not by_day:
+        return
+    today = max(by_day)
+    years = sorted({d[0] for d in by_day})
+    H = []
+    H.append('<div class="lc">')
+    H.append('<div class="lc-today"><span>Today in Amphoreus</span>'
+             f'<b>{lc_name(today)}</b><small>Astrean reckoning: {lc_name(today, True)}</small></div>')
+    H.append('<div class="lc-legend"><span><i class="lc-key ev"></i>a day we played through</span>'
+             '<span><i class="lc-key now"></i>where the story stands</span>'
+             '<span><i class="lc-key rest"></i>Selenodas, the rest day</span></div>')
+    for y in years:
+        if len(years) > 1:
+            H.append(f'<h2 class="lc-year">Year {y}</h2>')
+        for season in ['Fate', 'Pillar', 'Creation', 'Calamity']:
+            H.append(f'<div class="lc-season"><div class="lc-season-head"><b>Season of {season}</b>'
+                     f'<span>{LC_SEASONS[season]}</span></div><div class="lc-months">')
+            for mi, (am, ast, sea, patron) in enumerate(LC_MONTHS):
+                if sea != season:
+                    continue
+                busy = any(k[0] == y and k[1] == mi for k in by_day)
+                cells = ''.join(f'<span class="lc-wd{" rest" if i == 6 else ""}" title="{LC_DAYS[i]} ({LC_ASTREAN_DAYS[i]})">'
+                                f'{LC_DAYS[i][:2]}</span>' for i in range(7))
+                for d in range(1, LC_DAYS_IN_MONTH + 1):
+                    key = (y, mi, d)
+                    cls = ['lc-day']
+                    if lc_weekday(d) == 6:
+                        cls.append('rest')
+                    if key == today:
+                        cls.append('now')
+                    if key in by_day:
+                        cls.append('ev')
+                        nums = ', '.join(str(s['num']) for s in by_day[key])
+                        tip = f'{lc_name(key)}: session{"s" if len(by_day[key]) > 1 else ""} {nums}'
+                        cells += f'<a class="{" ".join(cls)}" href="#{lc_anchor(key)}" title="{tip}">{d}</a>'
+                    else:
+                        cells += f'<span class="{" ".join(cls)}" title="{lc_name(key)}">{d}</span>'
+                H.append(f'<div class="lc-month{" busy" if busy else ""}"><div class="lc-mhead">'
+                         f'<b>Month of {am}</b><small>{ast} · {patron}</small></div>'
+                         f'<div class="lc-grid">{cells}</div></div>')
+            H.append('</div></div>')
+    # timeline of the days we have played
+    H.append('<h2 id="the-days-so-far">The days so far</h2>')
+    H.append('<div class="lc-timeline">')
+    for key in sorted(by_day):
+        y, m, d = key
+        items = []
+        for s in by_day[key]:
+            extra = f' <small>{session_weather(s["lines"])}</small>' if session_weather(s['lines']) else ''
+            items.append(f'<li><a class="internal" href="{session_url(s)}">{s["title"]}</a>{extra}</li>')
+        H.append(f'<div class="lc-entry{" now" if key == today else ""}" id="{lc_anchor(key)}">'
+                 f'<div class="lc-date"><b>{d}</b><span>{LC_MONTHS[m][0]}</span></div>'
+                 f'<div class="lc-body"><div class="lc-dayname">{lc_name(key)}'
+                 f'<small>{lc_name(key, True)}</small></div><ul>{"".join(items)}</ul></div></div>')
+    H.append('</div></div>')
+    page = ['---', 'title: "The Light Calendar"', 'banner: "![[Kephale.png]]"', 'banner-height: 220',
+            'banner-y: 30', '---',
+            'The year in Amphoreus runs on the Light Calendar, Kephale\'s gift to humanity: twelve months '
+            'of 31 days, each kept by a Titan, in four divine seasons. The week starts on **Eosdas** and '
+            'rests on **Selenodas**. Gold days are the ones the party has lived through; click one to see '
+            'which sessions happened then.',
+            '',
+            "For the hours of the day and the Astrean names, see [[A_Travelers_Guide_to_the_Light_Calendar|"
+            "A Traveler's Guide to the Light Calendar]].",
+            '',
+            ''.join(H), '']
+    open(os.path.join(dst, 'Calendar.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(page))
+    print('calendar:', len(by_day), 'days, today is', lc_name(today))
+    return today
+
+
 # ---------- Home page ----------
-def home(sessions):
+def home(sessions, today=None):
     latest = sessions[-1] if sessions else None
     party = ['Caledor', 'Delmore', 'Franzen Bonotelli', 'Kenkai Ventura', 'Mayuri', 'Sir Caerwyn Kyrn',
              'Yuichi Highrose', 'Zuzros Rhiesis']
@@ -185,6 +352,9 @@ def home(sessions):
         out += ['> [!tip] Latest session',
                 f"> [[{latest['path']}|{latest['title']}]]" + (f" · {latest['date']}" if latest['date'] else ''),
                 '> ', '> [[Journal/index|Read the whole journal →]]', '']
+    if today:
+        out += ['> [!calendar] Today in Amphoreus',
+                f'> **{lc_name(today)}** · [[Calendar|Open the Light Calendar →]]', '']
     out += ['## The Party', ''] + rows + ['', '[[Party/index|Skill points, paragon skills and former members →]]', '']
     out += ['## Quests', '', '- [[Party Quests]]: the Flame-Chase, the Descent Beneath the Temple, and the party\'s open leads.', '']
     out += ['## The World', '',
@@ -193,7 +363,8 @@ def home(sessions):
             '- **Chrysos Heirs:** ' + ' · '.join(f'[[{h}]]' for h in heirs),
             '- **Titans:** [[Cerces]] · [[Georios]] · [[Janus]] · [[Kephale]] · [[Talanton]]',
             '- **Skyfire Dragons:** [[Commander Deva]] · [[Ione Kalyx]] · [[Jossum]]',
-            "- **Reference:** [[A_Travelers_Guide_to_the_Light_Calendar|A Traveler's Guide to the Light Calendar]]", '']
+            "- **Reference:** [[Calendar|The Light Calendar]] · "
+            "[[A_Travelers_Guide_to_the_Light_Calendar|A Traveler's Guide to the Light Calendar]]", '']
     return '\n'.join(out)
 
 
@@ -921,7 +1092,7 @@ for root, dirs, files in os.walk(src):
         if rel.startswith('Character Sheets/'):
             continue  # turned into sheet pages by build_sheets()
         if rel == 'Journal.md':
-            sessions = split_journal(open(s, encoding='utf-8').read().replace('\r\n', '\n'), dst)
+            sessions = split_journal(open(JOURNAL or s, encoding='utf-8').read().replace('\r\n', '\n'), dst)
             count += 1
             continue
         out_rel = rel[len('Lorekeeper Notes/'):] if rel.startswith('Lorekeeper Notes/') else rel
@@ -948,7 +1119,8 @@ sheets_made = build_sheets()
 link_sheets(sheets_made)
 made = fill_missing()
 galleries(tracker)
-open(os.path.join(dst, 'index.md'), 'w', encoding='utf-8', newline='\n').write(home(sessions))
+today = calendar_page(sessions)
+open(os.path.join(dst, 'index.md'), 'w', encoding='utf-8', newline='\n').write(home(sessions, today))
 if made:
     print('question-mark pages:', ', '.join(made))
 print('copied', count, 'files;', len(sessions), 'journal sessions')

@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Astardas, 6 Phareon, 1E
+Astardas, 6 Phareon, 1E 808 (Mnemodas, 6 Month of Joy, 4931)
 Velkhi got the MVP award.
 The game picks up exactly where the last one left fighting the Empress Necral Worm. after killing the worm we head into a room where there is a bunch of humanoid figures standing around a stone looking like they are preparing for a fight. Kenkai approaches them and attempts to disarm. they first appeared as if they are friendly. We can identify them as Caligni. Franzen is able to speak their language temporarily and ask them what is going on. Franzen is worried about what they have planned as they say they are going to invade the surface world and take all their money. As we prepare to pull our arms out, they react in aggression and a fight breaks out. We found that when we kill these creatures they explode in a radius around themselves as a last effort. two of them ran off towards the end, one of them ran into a doorway while the other jumped off the edged.
 

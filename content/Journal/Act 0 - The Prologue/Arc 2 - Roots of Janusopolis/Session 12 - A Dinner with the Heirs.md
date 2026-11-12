@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Anardas 10 Phareon, 1E 808
+Anardas 10 Phareon, 1E 808 (Hydadas, 10 Month of Joy, 4931)
 Mayuri got the MVP (Caledor, and Kenkai were also tied)
 
 4 hours before we are set to meet the Chrysos heirs everyone is getting ready. (Franzen bathing in a bathtub with a rubber ducky and Caledor brushes his hair 1000 times) after 4 hours we make it to the memorial palace. White marble, massive scale bigger than could be imagine, it looks like it was made for giants and not people as each wall is carved with murals of grand design. Mayuri notes that they have known each other for 96 hours. Mayuri has known the party as of 11:57. 1 year 6 months 13 days 12 hours 38 minutes. Caledor has assumed control of the Skyfire passage token. as we use it to pass on through the palace. the floor feels a little warm. faint mineral water is smelt throughout the air. a mural of the 12 titans adorn each side of the ceiling. as we follow the signs that say banquet. we head to the court of seasons which has detail murals. the banquet has many of people:

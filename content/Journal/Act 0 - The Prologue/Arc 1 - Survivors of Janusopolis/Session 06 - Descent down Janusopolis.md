@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Wevdas, 7 Phareon, 1E 808
+Wevdas, 7 Phareon, 1E 808 (Selenodas, 7 Month of Joy, 4931)
 Velkhi got the MVP award.
 
 we move on from this area to go to the next area where we see 4 warriors and an archer. however, these ones are petrified, we decide to move past of them. the next room Franzen finds a potato down here. down the corridor we find a pressure plate that at first Mayuri puts Pantera on but on second consideration realizes maybe we should check if there is a way out should Pantera be dispelled. noticing there is not, and thinking it is weight based Mayuri, Kenkai, and Yuichi decided to break a pillar off and place it on, noticing it did not budge. When placing a Balance Coin on it it did open the door, but Kenkai and Franzen were not so sure about that and decided to try and place more rocks. Yuichi then places his Balance Coin and the door opens.

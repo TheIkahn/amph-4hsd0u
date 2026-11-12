@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 5: The Ring of Sigils (Session 33-37)*
 
-Selenodas, 28 Month of Joy, 4931 
+Wevdas, 28 Phareon, 808 (Selenodas, 28 Month of Joy, 4931)
 Caledor got MVP 
 Partly Cloudy, Humidity 85%, Precipitation 36%, Wind 10 m/s
 

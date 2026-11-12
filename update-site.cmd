@@ -1,7 +1,8 @@
 @echo off
 rem Copies the latest Amphoreus notes from the shared vault into the site and publishes them.
+rem The journal (and the calendar built from its dates) comes from the personal-notes Journal.md.
 cd /d "%~dp0"
-python -I sync_site.py "C:\Users\duke0\Documents\obsidian\DnD Shared Vault\Haydens Campaign\Amphoreus - Twelve Coreflames" content || goto :error
+python -I sync_site.py "C:\Users\duke0\Documents\obsidian\DnD Shared Vault\Haydens Campaign\Amphoreus - Twelve Coreflames" content "C:\Users\duke0\Documents\obsidian\Personal Notes\TTRPG Folder\DND Characters\Haydens campaign\Amphoreus - Twelve Coreflames\Journal.md" || goto :error
 git add -A
 git commit -m "Update notes" || echo Nothing new to publish.
 git push || goto :error

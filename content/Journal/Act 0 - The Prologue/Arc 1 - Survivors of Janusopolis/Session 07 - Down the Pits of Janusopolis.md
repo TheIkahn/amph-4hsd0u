@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 1: Survivors of Janusopolis (Session 1-7)*
 
-Wevdas, 7 Phareon, 1E 808 
+Wevdas, 7 Phareon, 1E 808 (Selenodas, 7 Month of Joy, 4931)
 Kenkai got the MVP award.
 
 we are continuing where we left off against the two Behirs. after killing both of them. after a bit of thinking Sora summons a bunch of water on Castorice which wakes her up. she told us that she is a heavy sleeper and the reason for her condition is the dreams she has been having. we explain to her that we were sent to find her. she thanks us and tells us that she is heading back, turns into butterflies and disappears. we head back and report to Jossum that Castorice is okay. 

@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 4: Janus’s Coreflame (Session 25-32)*
 
-Pyrodas, 25 Month of Joy, 4931
+Middas, 25 Phareon, 808 (Pyrodas, 25 Month of Joy, 4931)
 Zuzros Rhiesis got MVP
 Partly Cloudy, Humidity 62%, Precipitation 23%, Wind 8 m/s
 

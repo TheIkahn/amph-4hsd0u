@@ -9,7 +9,7 @@ tags: [session]
 ---
 *Arc 2: Roots of Janusopolis (Session 8-17)*
 
-Astardas, 13 Phareon, 808 
+Astardas, 13 Phareon, 808 (Mnemodas, 13 Month of Joy, 4931)
 Ulixes got the MVP 
 Overcast, Humidity 62%, precipitation 47%, wind 5 m/s
 

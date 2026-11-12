@@ -9,9 +9,9 @@ tags: [session]
 ---
 *Arc 5: The Ring of Sigils (Session 33-37)*
 
-Session Thirty-six 10/27/2026 
-Pyrodes, 28 Month of Joy, 4931 
-Franzen got MVP it is weather outside
+Middas, 28 Phareon, 808 (Pyrodas, 28 Month of Joy, 4931)
+Franzen got MVP 
+it is weather outside
 
 We continue our bout of combat. Tobari continues to keep his distance during the fight and makes multiple flurry of blows attacks with his sword to varied success. for the most part though he does manage to keep the molting's the Seam-Mother leaves from ripening and spawning her eldritch brood. As a party we manage to kill off all the Seam-Mothers underlings / spawn and begin to focus her down. As we manage to form a battle line with Caerwyn and Tobari on one side the Seam-mother is flanked from the opposite side by Yuichi, Franzen and Kenkai. We seemed to have the upper hand until the Seam-Mother split herself along her abdomen to perform an unholy "Birth" of an Abyss beast that is flung out over the heads of the three where it quicky establishes itself as a viable threat from its flanking position. After this "birth" The Seam-Mother decides to close the distance on the isolates Caldor. Kenkai falls back to flank the abyss beast with Yuichi. Franzen, Tobari, and Caerwyn close to within striking distance of the seam-mother once more. while manuvering into the new position Tobari manages to land two devastating hits on the Abyss beast. 
 

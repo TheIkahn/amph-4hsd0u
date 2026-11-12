@@ -119,6 +119,7 @@ body {
   padding: 0 1.75rem 1.5rem 1.75rem !important;
   margin-top: 1rem;
   backdrop-filter: blur(2px);
+  box-sizing: border-box;
 }
 :root[saved-theme="light"] .center {
   background: rgba(246, 240, 226, 0.82);
@@ -347,3 +348,72 @@ body {
 }
 .sheet .facts b { color: var(--secondary); }
 .sheet a.external { color: var(--secondary); text-decoration: underline dotted; }
+
+// Light Calendar
+.lc { margin-top: 1rem; }
+.lc-today {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 1rem; margin-bottom: 1rem; border-radius: 14px;
+  border: 1px solid var(--secondary);
+  background: radial-gradient(ellipse at top, rgba(217, 179, 106, 0.18), transparent 70%);
+}
+.lc-today span { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; color: var(--gray); }
+.lc-today b { font-family: var(--headerFont); font-size: 1.35rem; color: var(--secondary); margin: 0.2rem 0; }
+.lc-today small { color: var(--gray); font-style: italic; }
+.lc-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font-size: 0.8rem; color: var(--gray); margin-bottom: 1rem; }
+.lc-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.lc-key { width: 0.9rem; height: 0.9rem; border-radius: 4px; display: inline-block; border: 1px solid var(--lightgray); }
+.lc-key.ev { background: var(--secondary); border-color: var(--secondary); }
+.lc-key.now { box-shadow: 0 0 0 2px var(--tertiary); background: transparent; }
+.lc-key.rest { background: var(--highlight); }
+.lc-season { margin: 1.25rem 0; }
+.lc-season-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--lightgray); padding-bottom: 0.3rem; }
+.lc-season-head b { font-family: var(--headerFont); color: var(--secondary); font-size: 1.05rem; }
+.lc-season-head span { font-size: 0.8rem; color: var(--gray); }
+.lc-months { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.75rem; }
+.lc-month { border: 1px solid var(--lightgray); border-radius: 12px; padding: 0.6rem; background: rgba(0, 0, 0, 0.12); }
+:root[saved-theme="light"] .lc-month { background: rgba(255, 255, 255, 0.35); }
+.lc-month.busy { border-color: var(--secondary); }
+.lc-mhead { display: flex; flex-direction: column; margin-bottom: 0.4rem; }
+.lc-mhead b { font-family: var(--headerFont); font-size: 0.9rem; color: var(--dark); }
+.lc-mhead small { font-size: 0.7rem; color: var(--gray); }
+.lc-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+.lc-wd { font-size: 0.6rem; color: var(--gray); text-transform: uppercase; padding-bottom: 2px; }
+.lc-wd.rest { color: var(--secondary); }
+.lc-day { font-size: 0.72rem; line-height: 1.6rem; border-radius: 5px; color: var(--darkgray); }
+.lc-day.rest { background: var(--highlight); }
+a.lc-day.ev, a.lc-day.ev:hover {
+  background: var(--secondary); color: var(--light) !important; font-weight: 700; text-decoration: none;
+}
+a.lc-day.ev:hover { background: var(--tertiary); }
+.lc-day.now { box-shadow: 0 0 0 2px var(--tertiary); }
+.lc-timeline { display: flex; flex-direction: column; gap: 0.5rem; }
+.lc-entry { display: flex; gap: 0.9rem; align-items: flex-start; padding: 0.6rem 0.75rem;
+  border-left: 3px solid var(--lightgray); border-radius: 0 10px 10px 0; background: rgba(0, 0, 0, 0.10); scroll-margin-top: 1rem; }
+:root[saved-theme="light"] .lc-entry { background: rgba(255, 255, 255, 0.35); }
+.lc-entry.now { border-left-color: var(--tertiary); }
+.lc-date { min-width: 3.5rem; display: flex; flex-direction: column; align-items: center; }
+.lc-date b { font-family: var(--headerFont); font-size: 1.5rem; line-height: 1.1; color: var(--secondary); }
+.lc-date span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); }
+.lc-dayname { font-weight: 600; }
+.lc-dayname small { display: block; font-weight: 400; font-style: italic; color: var(--gray); font-size: 0.75rem; }
+.lc-body ul { margin: 0.3rem 0 0 0; padding-left: 1.1rem; }
+.lc-body li small { color: var(--gray); font-size: 0.75rem; }
+
+// "Today in Amphoreus" box on the home page
+.callout[data-callout="calendar"] {
+  --color: #d9b36a;
+  --border: #d9b36a55;
+  --bg: #d9b36a12;
+}
+:root[saved-theme="light"] .callout[data-callout="calendar"] {
+  --color: #8a6420;
+  --border: #8a642055;
+  --bg: #8a642012;
+}
+
+// phones: the long site title pushed the top bar past the screen edge
+@media all and (max-width: 800px) {
+  .page-title { font-size: 1.15rem !important; }
+}
