@@ -1,0 +1,133 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+
+// Party grid on the home page
+.party-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+.party-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 14px;
+  background: var(--highlight) !important;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: border-color 0.15s ease;
+}
+.party-card:hover {
+  border-color: var(--secondary);
+}
+.party-card img,
+.party-card .party-card-blank {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0;
+}
+.party-card .party-card-blank {
+  display: block;
+  background: var(--lightgray);
+}
+
+// Gold rule under headings, to match the quest tracker
+article h2 {
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.3rem;
+}
+
+// Character / place galleries on folder pages
+.lore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem;
+  margin: 0.75rem 0 2rem 0;
+}
+.lore-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.7rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 14px;
+  background: var(--highlight) !important;
+  color: var(--darkgray) !important;
+  font-weight: normal;
+  line-height: 1.3;
+  transition: border-color 0.15s ease;
+}
+.lore-card:hover {
+  border-color: var(--secondary);
+}
+.lore-card img,
+.lore-card .lore-card-blank {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0;
+}
+.lore-card .lore-card-blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lightgray);
+  color: var(--secondary);
+  font-family: var(--headerFont);
+  font-size: 1.6rem;
+}
+.lore-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.92rem;
+}
+.lore-card-text strong {
+  color: var(--secondary);
+  font-family: var(--headerFont);
+  font-size: 1rem;
+}
+
+// Amphoreus background: Kephale glow at the top, script glyphs along the bottom
+body {
+  background:
+    linear-gradient(rgba(18, 23, 34, 0.25), rgba(18, 23, 34, 0.25)),
+    url("static/amphoreus-bg.jpg") center top / cover fixed,
+    #121722;
+}
+:root[saved-theme="light"] body {
+  background:
+    linear-gradient(rgba(246, 240, 226, 0.86), rgba(246, 240, 226, 0.86)),
+    url("static/amphoreus-bg.jpg") center top / cover fixed,
+    #f6f0e2;
+}
+// keep the reading column solid enough to read comfortably
+.center {
+  background: rgba(18, 23, 34, 0.72);
+  border: 1px solid rgba(217, 179, 106, 0.12);
+  border-radius: 18px;
+  padding: 0 1.75rem 1.5rem 1.75rem !important;
+  margin-top: 1rem;
+  backdrop-filter: blur(2px);
+}
+:root[saved-theme="light"] .center {
+  background: rgba(246, 240, 226, 0.82);
+  border-color: rgba(138, 100, 32, 0.15);
+}
+@media all and (max-width: 800px) {
+  .center {
+    padding: 0 1rem 1rem 1rem !important;
+    border-radius: 0;
+    border: none;
+  }
+}

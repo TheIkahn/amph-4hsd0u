@@ -1,0 +1,7 @@
+---
+title: "Okhema"
+hide-listing: true
+---
+Everyone we know of among the Okhema.
+
+<div class="lore-grid"><a class="lore-card internal" href="Important-Characters/Okhema/Caenis"><span class="lore-card-blank">C</span><span class="lore-card-text"><strong>Caenis</strong><span>A half-giant speaker who opposes Aglaea at every turn.</span></span></a><a class="lore-card internal" href="Important-Characters/Okhema/Kiron"><img src="Images/Kiron-icon.png" alt=""><span class="lore-card-text"><strong>Kiron</strong><span>Okhema's 12 ft forgemaster, who forged the Chrysos Heirs' weapons.</span></span></a><a class="lore-card internal" href="Important-Characters/Okhema/Linnilae"><img src="Images/Linnilae-icon.png" alt=""><span class="lore-card-text"><strong>Linnilae</strong><span>Kiron's daughter, and the one permanent staff member at the Philoxenion.</span></span></a><a class="lore-card internal" href="Important-Characters/Okhema/Medea"><img src="Images/Medea-icon.png" alt=""><span class="lore-card-text"><strong>Medea</strong><span>A relaxed, plant-obsessed botanist and alchemist at the Grove who follows Cerces.</span></span></a><a class="lore-card internal" href="Important-Characters/Okhema/Thessil-Vane"><img src="Images/Thessil-Vane-icon.png" alt=""><span class="lore-card-text"><strong>Thessil Vane</strong><span>"Mr. V", head chairman of Okhema's civic engineering committee. Writes engineering books by trade and dark fantasy on the side, and is chasing Caledor for…</span></span></a></div>
