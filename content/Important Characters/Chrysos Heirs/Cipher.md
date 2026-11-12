@@ -5,7 +5,7 @@ banner-x: 50
 banner-y: 0
 banner-fade: -65
 icon-image: "![[Cipher-icon.png]]"
-aliases: [Ciphera]
+aliases: [Ciphera, Cifera]
 tags: [npc, lorekeeper, chrysos-heir]
 source: "LoreKeeper Notes - Astreas 4 (Google Doc)"
 updated: 2026-11-11
@@ -38,6 +38,11 @@ title: "Cipher"
 
 > [!tip] 🤝 Relationships
 > **Contacts:** In contact with [[Aglaea]] (Session 24).
+
+> [!quote] 📜 Prophecy
+> The lost city of rogues, [[Dolos]], where 300 Rogues revel in their games, answering to no one. Race onward, fleet-Footed Thief Star Cifera, Chrysos Heir of the 'Trickery' Coreflame, and may your web of lies spread with the breeze throughout all lands.
+>
+> — 'Ha! Trying to pull one over on me? Dream on!'
 
 > [!example]- 🎲 Session Log
 > - **Session 19.** Anaxagoras says she is nowhere to be found.

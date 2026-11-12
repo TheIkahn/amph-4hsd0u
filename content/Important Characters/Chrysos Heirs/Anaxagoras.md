@@ -23,7 +23,7 @@ title: "Anaxagoras"
 > | **Gender** | Male |
 > | **Titan** | [[Cerces]]: reason, logic, order, creation |
 > | **Age** | Looks about 25 |
-> | **Affiliation** | Chrysos Heir. Founder of a school at the Grove of Epiphany |
+> | **Affiliation** | Chrysos Heir. Founder of a school at the [[Grove of Epiphany]] |
 > | **Status** | Alive |
 > | **First Seen** | Session 3 / Phōsmylaion |
 > | **Last Seen** | Session 19 / The Grove |
@@ -45,7 +45,7 @@ title: "Anaxagoras"
 > **Enemies / Rivals:** Doesn't like [[Aglaea]], and the feeling is mutual.
 
 > [!example]- 🎲 Session Log
-> - **Session 19 (An Evening at the Grove).** Lectures the party on Nousporism, opening with "what is the difference between a belief and a conclusion you have made?" Franzen and Caerwyn challenge his disdain for love. His thesis: the Titans are not gods, just powerful beings, though not without divinity. Yuichi tells him he's killing more people by not claiming his coreflame. He reports that Cipher is nowhere to be found and Hysilens is in Styxia drinking herself away. Afterwards he tells Mayuri he hasn't found anything about her ailment yet and suggests she ask Castorice.
+> - **Session 19 (An Evening at the Grove).** Lectures the party on Nousporism, opening with "what is the difference between a belief and a conclusion you have made?" Franzen and Caerwyn challenge his disdain for love. His thesis: the Titans are not gods, just powerful beings, though not without divinity. Yuichi tells him he's killing more people by not claiming his coreflame. He reports that Cipher is nowhere to be found and Hysilens is in [[Styxia]] drinking herself away. Afterwards he tells Mayuri he hasn't found anything about her ailment yet and suggests she ask Castorice.
 > - **Session 24.** Yuichi brings him up with Aglaea, which sets her off.
 
 > [!info]- 📌 Trivia / Facts

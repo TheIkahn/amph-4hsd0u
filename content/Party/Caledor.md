@@ -46,7 +46,7 @@ title: "Caledor"
 > - [ ] Get your rematch with Phainon.
 
 > [!note] The Closed Garden
-> **Location:** The Grove of Epiphany
+> **Location:** The [[Grove of Epiphany]]
 >
 > The Grove keeps what it knows for its members. The archives, the real tutors, the crafting halls and the members' market sit behind a formal induction, which takes a sponsor among the Grove's members, demonstrated worth, and a ceremony. Members then earn standing through study and service, and one with enough standing may petition to found a sanctioned satellite school under the Grove's name. For Caledor that means a school of sword and sorcery, which Okhema doesn't have. As he was leaving, Sage Apollonides came to find him, which isn't how it usually goes. Induction requires a sponsor, the Sage said, and nothing more.
 >

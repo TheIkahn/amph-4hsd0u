@@ -17,6 +17,9 @@ title: "Talanton"
 > | **Chrysos Heir** | [[Cerydra]], who took the coreflame long ago |
 > | **Tied to** | [[Weightmaster\|The Weightmaster]] |
 
+> [!quote] 📜 Lore
+> The Law Titan. Talanton permits neither favoritism nor injustice, safeguarding Amphoreus's taboos and boundaries while prescribing logic and law for all things.
+
 > [!example]- 🎲 Session Log
 > - **Session 22.** The party finds writings from the God of Talanton, with a very recent, fully legible note at the bottom.
 > - **Session 24.** Aglaea's address: Talanton has been silent for thousands of years.

@@ -41,7 +41,7 @@ title: "Okhema"
 
 > [!example]- 🎲 History with the party
 > - **Arrival.** Ione Kalyx led us out of the Metaxy and through a cheering crowd to registration and the Tri-Lamp house.
-> - **The Heirs' tower.** Aglaea gave us a passport for the city's sectioned areas and sent us to Janusopolis to find Castorice. Mydeimos left to look into items stolen from Castrum Kremnos.
+> - **The Heirs' tower.** Aglaea gave us a passport for the city's sectioned areas and sent us to Janusopolis to find Castorice. Mydeimos left to look into items stolen from [[Castrum Kremnos]].
 > - **Kiron's crane job.** We protected Damar, Liisa and Pell during deconstruction work.
 > - **The Marmoreal Palace.** Formal dinner with the Heirs, where we met Phainon, Commander Deva and Thessil Vane.
 > - **Tribios's briefing.** She showed us a giant mass of corruption on a map. We took the smaller tethers while the Heirs handled the main mass.

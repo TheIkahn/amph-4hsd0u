@@ -14,7 +14,7 @@ title: "Mydeimos"
 
 
 > [!quote] At a glance
-> The undying lion of Castrum Kremnos and Heir of Nikador. The strongest of the Heirs in raw strength and endurance, and the one who trains the party at 5 a.m.
+> The undying lion of [[Castrum Kremnos]] and Heir of Nikador. The strongest of the Heirs in raw strength and endurance, and the one who trains the party at 5 a.m.
 
 > [!info] 📋 Identity
 > | | |

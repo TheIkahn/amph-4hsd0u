@@ -5,6 +5,7 @@ banner-x: 50
 banner-y: 0
 banner-fade: -65
 icon-image: "![[Hysilens-icon.png]]"
+aliases: [Helektra]
 tags: [npc, lorekeeper, chrysos-heir]
 source: "LoreKeeper Notes - Astreas 4 (Google Doc)"
 updated: 2026-11-11
@@ -35,6 +36,11 @@ title: "Hysilens"
 
 > [!tip] 🤝 Relationships
 > **Allies:** [[Cerydra]], whom she served as a knight.
+
+> [!quote] 📜 Prophecy
+> [[Styxia]], a coastal city of intoxication and dreams, where echoes of old songs still drift among the waves. Helektra, Daughter of the Sea, Chrysos Heir who shall cleanse the Ocean's Coreflame, dispels the murky undercurrents and orchestrates a feast of revelry for the heroes from beyond.
+>
+> *The Session 6 notes list the Heir of Phagousa as Helektra.*
 
 > [!example]- 🎲 Session Log
 > - **Session 19.** Anaxagoras says she is in Styxia, drinking herself away.

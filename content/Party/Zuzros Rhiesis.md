@@ -61,7 +61,7 @@ title: "Zuzros Rhiesis"
 > - [ ] **Minor (Story): "Voice of the Mountain."** Use your connection to the land to learn something about a location's history the party would otherwise have missed. *2 SP*
 > - [x] **Major (Combat): "The Network Holds."** Keep your Vitality Network at full capacity for an entire combat, with at least 4 allies connected at all times. *3 SP*
 > - [ ] **Major (Story): "Terravox's Trail."** Discover a location, ruin, or relic tied to Terravox's passage through Amphoreus and recover something meaningful from it. *4 SP*
-> - [ ] **Major (Social): "Kremnoan Diplomacy."** Resolve a conflict between two parties by appealing to shared Kremnoan values, even if neither is from Castrum Kremnos. *3 SP*
+> - [ ] **Major (Social): "Kremnoan Diplomacy."** Resolve a conflict between two parties by appealing to shared Kremnoan values, even if neither is from [[Castrum Kremnos]]. *3 SP*
 > - [ ] **Major (Combat): "The Mountain Carries."** In a single combat, redirect at least 30 damage from allies onto yourself using The Mountain Carries, and end the fight standing. *4 SP*
 > - [ ] **Epic: "Bedrock Unbroken."** Survive a fight against a Mythic+ boss as one of the last 2 party members standing for at least 2 rounds, and revive at least one ally before it ends. *1 Gold Star*
 > - [ ] **Epic: "Georios's Witness."** Be present and conscious when Terravox or another major Georios-aligned entity manifests in the campaign, and have a direct exchange with them. *1 Gold Star*

@@ -46,7 +46,7 @@ title: "Franzen Bonotelli"
 > [!note] Arms of the Giants
 > **Location:** Dawncloud
 >
-> Among the artifacts on show at Dawncloud, Franzen recognised weapons made for giants: legendary arms of Castrum Kremnos, relics of Nikador.
+> Among the artifacts on show at Dawncloud, Franzen recognised weapons made for giants: legendary arms of [[Castrum Kremnos]], relics of Nikador.
 >
 > - [x] Recognise the giants' weapons at Dawncloud.
 > - [ ] Learn the weapons' names and their story.

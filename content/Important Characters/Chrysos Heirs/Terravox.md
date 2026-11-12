@@ -36,6 +36,9 @@ title: "Terravox"
 > [!tip] 🤝 Relationships
 > **Party:** Zuzros (a follower of Georios) received a vision of him.
 
+> [!quote] 📜 Prophecy
+> Terravox, the Dragon Lord of the Earth, the hero searching for the Coreflame of such… your kindness knows no bounds for those with the blood of this land. You will set a standard for all to follow.
+
 > [!example]- 🎲 Session Log
 > - **Session 31.** Zuzros offers his holy symbol of Georios at the Mystic Forge and learns that Terravox is flying on Dromas over a desert back toward Okhema, possibly days away, and that it isn't looking good.
 > - **Session 33.** Zuzros tells Phainon, who is pleased and suggests a welcoming party.

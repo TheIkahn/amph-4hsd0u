@@ -32,6 +32,9 @@ title: "Cerydra"
 > [!tip] 🤝 Relationships
 > **Allies:** [[Hysilens]] served as her loyal knight.
 
+> [!quote] 📜 Prophecy
+> Sovereign Cerydra, Chrysos Heir who wields the Coreflame of 'Law', you shall set your pieces, challenge the gods, pass judgment upon the faithless, and carve the path of Flame-Chase into the fate of Amphoreus.
+
 > [!example]- 🎲 Session Log
 > - **Session 22.** The party finds writings from the God of Talanton; the note at the bottom looks very recent.
 > - **Session 24.** Aglaea's address: Cerydra took her coreflame long ago, Talanton has been silent for thousands of years, and Cerydra hasn't been seen anywhere.

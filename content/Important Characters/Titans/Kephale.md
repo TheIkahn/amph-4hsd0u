@@ -34,6 +34,9 @@ title: "Kephale"
 > - An immense towering figure with multiple arms, some of which once held up a large sphere mimicking the world.
 > - A gilded male statue with liquid flowing from its hands.
 
+> [!quote] 📜 Lore
+> The Worldbearing Titan. Kephale was entrusted by the gods with the burden of carrying life. They relinquished their throne of dominion over the world, solely to leave a glimmer of light for humanity.
+
 > [!example]- 🎲 Session Log
 > - **Session 24.** Phainon looks up at Kephale to find his courage before the address. Mayuri's warped reality shows Sir Caerwyn two realities, one with Kephale bright.
 > - **Session 26.** A Dawnspeaker serving Kephale tells us Kephale willingly gave up his coreflame, and speaks of a price paid "12 times over".

@@ -20,7 +20,7 @@ title: "Janusopolis"
 > [!note] 📜 What we know
 > - The Abyss corrupted the city, and the Evernight covers much of it.
 > - Much of Old Janusopolis was cleansed when the party and the Chrysos Heirs fought the anchors plaguing the land. The petrified Furiae warriors were freed and regained their free will.
-> - The freed Furiae are scattered through the cleared sectors, mostly traumatized and missing memories. Some made it back to Castrum Kremnos.
+> - The freed Furiae are scattered through the cleared sectors, mostly traumatized and missing memories. Some made it back to [[Castrum Kremnos]].
 > - Janus's vault lies in the Temple of the Three Fates. Tribios took his coreflame there, and Janus died.
 > - Tartarus lies beneath the temple: a labyrinth of doors, vaults of Zagreus, and stranger things.
 

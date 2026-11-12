@@ -1,13 +1,15 @@
 ---
+tags: [titan, lorekeeper]
+source: "Tibits + Journal"
+updated: 2026-11-11
 title: "Aquila"
-tags: [unknown]
 ---
-*Titan of Foundation · ???*
+*Titan of Foundation · Sky*
 
-> [!question] Not yet recorded
-> The party knows very little about **Aquila** so far. Anything marked ??? is still a mystery.
+> [!quote] 📜 Lore
+> The Sky Titan. When Aquila's eyes that gaze upon the land open, the world welcomes light, and as Aquila's eyes close, the world plunges into darkness.
 
-> [!info] 📋 What we know
+> [!info] 📋 At a glance
 > | | |
 > | :-- | :-- |
 > | **Group** | Titans of Foundation |
@@ -18,9 +20,12 @@ tags: [unknown]
 > | **Where** | ??? |
 > | **Manifestation** | ??? |
 
-> [!question] ❓ Open Questions
-> - Where is Aquila, and what form does it take?
-> - Is Aquila dormant, corrupted, or dead?
-> - Who holds, or will hold, the coreflame of Sky?
+> [!tip] 🤝 Connections
+> - **[[Hyacinthia]]** guards the Sky Coreflame.
 
-*Mentioned in: [[Hyacinthia]], [[Amphoreus Info]]*
+> [!example]- 🎲 Session Log
+> - **Session 19.** The Grove lecture: Aquila forged the Dawn Device above Okhema.
+
+> [!question]- ❓ Open Questions
+> - Where is Aquila now?
+> - What is the Dawn Device, and what did Cipher do with it?

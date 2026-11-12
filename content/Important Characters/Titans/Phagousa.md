@@ -1,26 +1,32 @@
 ---
+tags: [titan, lorekeeper]
+source: "Tibits + Journal"
+updated: 2026-11-11
 title: "Phagousa"
-tags: [unknown]
 ---
-*Titan of Foundation · ???*
+*Titan of Foundation · Ocean, storms, feasts*
 
-> [!question] Not yet recorded
-> The party knows very little about **Phagousa** so far. Anything marked ??? is still a mystery.
+> [!quote] 📜 Lore
+> The Ocean Titan. Phagousa enjoys drifting through the mortal world, appearing in the ocean's waves, the river's rapids, and the goblets at feasts, bringing song, dance, and laughter.
+>
+> Phagousa's corruption sounds like music. If you hear singing rising from dark water, the correct response is to walk inland and not look back.
+>
+> Pour the first spoonful of Phagousa's Laughter onto the ground before you eat. The Tide takes her share first, always.
 
-> [!info] 📋 What we know
+> [!info] 📋 At a glance
 > | | |
 > | :-- | :-- |
 > | **Group** | Titans of Foundation |
-> | **Domain** | Ocean |
+> | **Domain** | Ocean, storms, feasts |
 > | **State** | ??? |
 > | **Coreflame** | ??? |
-> | **Chrysos Heir** | [[Hysilens]] |
-> | **Where** | ??? |
+> | **Chrysos Heir** | [[Hysilens]] (Helektra) |
+> | **Where** | Worshipped in [[Styxia]] |
 > | **Manifestation** | ??? |
 
-> [!question] ❓ Open Questions
-> - Where is Phagousa, and what form does it take?
-> - Is Phagousa dormant, corrupted, or dead?
-> - Who holds, or will hold, the coreflame of Ocean?
+> [!tip] 🤝 Connections
+> - **[[Styxia]]** is devoted to Phagousa.
+> - **[[Hysilens]]** (Helektra) is to cleanse the Ocean's Coreflame.
 
-*Mentioned in: [[Hysilens]], [[Amphoreus Info]]*
+> [!question]- ❓ Open Questions
+> - Where is Phagousa now, and how corrupted is she?

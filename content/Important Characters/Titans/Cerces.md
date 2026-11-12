@@ -31,3 +31,8 @@ title: "Cerces"
 > - Located in the Grove.
 > - A tree, with a large building built around her.
 > - A large feminine figure wearing a huge headpiece.
+
+> [!quote] 📜 Lore
+> The Reason Titan. Cerces manifested in the world as a great sacred tree, permitting humans to walk beside them, awaken enlightenment, and reflect deeply to gain knowledge.
+>
+> The [[Grove of Epiphany]] grows on and around her Sacred Tree.

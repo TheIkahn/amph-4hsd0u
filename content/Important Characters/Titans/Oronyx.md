@@ -1,13 +1,17 @@
 ---
+tags: [titan, lorekeeper]
+source: "Tibits + Journal"
+updated: 2026-11-11
 title: "Oronyx"
-tags: [unknown]
 ---
-*Titan of Fate · ???*
+*Titan of Fate · Time*
 
-> [!question] Not yet recorded
-> The party knows very little about **Oronyx** so far. Anything marked ??? is still a mystery.
+> [!quote] 📜 Lore
+> The Time Titan. Oronyx weaves the threads of time, upholding the past, present, and future of the world, ensuring the flow of all things.
+>
+> In the Light Calendar, Selenodas is the Day of Moons: the day Oronyx slept. Markets close at Parting Hour.
 
-> [!info] 📋 What we know
+> [!info] 📋 At a glance
 > | | |
 > | :-- | :-- |
 > | **Group** | Titans of Fate |
@@ -18,10 +22,9 @@ tags: [unknown]
 > | **Where** | ??? |
 > | **Manifestation** | ??? |
 
-> [!question] ❓ Open Questions
-> - Where is Oronyx, and what form does it take?
-> - Is Oronyx dormant, corrupted, or dead?
-> - Who holds, or will hold, the coreflame of Time?
-> - Who is the Chrysos Heir of Oronyx?
+> [!tip] 🤝 Connections
+> - See [[A_Travelers_Guide_to_the_Light_Calendar|A Traveler's Guide to the Light Calendar]].
 
-*Mentioned in: [[Amphoreus Info]]*
+> [!question]- ❓ Open Questions
+> - Who is the Chrysos Heir of Oronyx?
+> - Where is Oronyx, and what state is it in?

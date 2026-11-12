@@ -14,7 +14,7 @@ title: "Hyacinthia"
 
 
 > [!quote] At a glance
-> Physician Hyacinthia ("Hyacine"), Heir of Aquila. A dream-walking Nousporist from the floating Grove of Epiphany who streams to the common people as Cynthia05.
+> Physician Hyacinthia ("Hyacine"), Heir of Aquila. A dream-walking Nousporist from the floating [[Grove of Epiphany]] who streams to the common people as Cynthia05.
 
 > [!info] 📋 Identity
 > | | |

@@ -18,6 +18,11 @@ title: "Janus"
 > | **Chrysos Heir** | [[Tribios]] |
 > | **City** | [[Janusopolis Info and Occupants\|Janusopolis]] |
 
+> [!quote] 📜 Lore
+> The Passage Titan. Janus knows the existence and destination of all pathways. They govern not only the passages people traverse, but also the journeys that bind their fates.
+>
+> The Light Calendar opens the year with Gate, the month of Janus.
+
 > [!example]- 🎲 Session Log
 > - **Session 26.** In the Temple of the Three Fates, Tribios confirms the vault is Janus's. The star at its centre is the guiding star, because Janus was the first Titan.
 > - **Session 27.** Tribios takes the coreflame. Cryptic messages tell the party to kill the gods and nourish the land with their blood. Janus dies, and a doorway opens under golden blood.

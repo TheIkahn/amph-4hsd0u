@@ -34,7 +34,7 @@ title: "Castorice"
 > **Personality:** Very mild. Speaks calmly, often without much tone. Often sleepy, and a heavy sleeper. Dislikes crowds.
 
 > [!note] 📜 Background & History
-> **Known history:** Little is known. Records say she was "found" near the River of Souls in Janusopolis as a child, already bearing the mark of an Heir. She doesn't speak of her past, though she told Mayuri she is from Aidonia, a land far to the north that worships Death (Session 12).
+> **Known history:** Little is known. Records say she was "found" near the River of Souls in Janusopolis as a child, already bearing the mark of an Heir. She doesn't speak of her past, though she told Mayuri she is from [[Aidonia]], a land far to the north that worships Death (Session 12).
 >
 > **Prophecy:**
 > > "The land that reveres death, Aidonia, where snow falls endlessly, has today drifted into a sweet slumber. Castorice, daughter of the River of Souls, Chrysos Heir in search of the 'Death' Coreflame, sets forth. You must guard the lament of souls and embrace the solitude of destiny. Life and death are but a journey. When the butterfly alights on the branch, what withers will bloom anew."
