@@ -131,3 +131,219 @@ body {
     border: none;
   }
 }
+
+// Character sheets
+.sheet {
+  margin: 0.5rem 0 2rem 0;
+}
+.sheet-sub {
+  font-style: italic;
+  color: var(--gray);
+  margin: 0 0 0.75rem 0;
+}
+.sheet h4 {
+  font-family: var(--headerFont);
+  color: var(--secondary);
+  margin: 1.1rem 0 0.4rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+.sheet-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.5rem;
+}
+.sheet-stats > div,
+.sheet-chips > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.4rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: var(--highlight);
+  text-align: center;
+}
+.sheet-stats span,
+.sheet-chips span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.sheet-stats b {
+  font-family: var(--headerFont);
+  font-size: 1.25rem;
+  color: var(--dark);
+}
+.sheet-stats small,
+.sheet-chips small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--secondary);
+  font-weight: normal;
+}
+.sheet-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+.sheet-chips b {
+  font-family: var(--headerFont);
+  font-size: 1.15rem;
+  color: var(--dark);
+}
+.sheet-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.25rem 1rem;
+}
+.sheet-skills .sk {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  border-bottom: 1px dashed var(--lightgray);
+}
+.sheet-skills .sk span {
+  flex: 1;
+}
+.sheet-skills .sk i {
+  font-style: normal;
+  font-size: 0.7rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid var(--lightgray);
+  color: var(--gray);
+}
+.sheet-skills .sk.r1 i { color: var(--darkgray); border-color: var(--gray); }
+.sheet-skills .sk.r2 i { color: var(--secondary); border-color: var(--secondary); }
+.sheet-skills .sk.r3 i,
+.sheet-skills .sk.r4 i { color: var(--light); background: var(--secondary); border-color: var(--secondary); }
+.sheet-skills .sk b {
+  min-width: 2.4rem;
+  text-align: right;
+  font-family: var(--headerFont);
+}
+.sheet-strikes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.5rem;
+}
+.strike {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--lightgray);
+  border-left: 3px solid var(--secondary);
+  border-radius: 10px;
+  background: var(--highlight);
+}
+.strike strong { color: var(--dark); }
+.strike span { font-size: 0.85rem; color: var(--secondary); }
+.strike em { font-size: 0.85rem; }
+.sheet-notes p { margin: 0.2rem 0; }
+.sheet details {
+  margin: 0.4rem 0;
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 0, 0, 0.08);
+}
+.sheet details > summary {
+  cursor: pointer;
+  font-family: var(--headerFont);
+  color: var(--secondary);
+}
+.sheet details.sheet-entry {
+  border: none;
+  border-bottom: 1px dashed var(--lightgray);
+  border-radius: 0;
+  background: none;
+  padding: 0.25rem 0;
+  margin: 0;
+}
+.sheet details.sheet-entry > summary {
+  font-family: var(--bodyFont);
+  color: var(--darkgray);
+}
+.sheet details.sheet-entry p {
+  margin: 0.3rem 0 0.4rem 1rem;
+  font-size: 0.9rem;
+  color: var(--darkgray);
+}
+.sheet-meta {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-left: 0.4rem;
+}
+.sheet-companion {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 0.5rem;
+}
+
+// Feat / action / spell descriptions on character sheets
+.sheet .traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.45rem 0 0.35rem 0;
+}
+.sheet .trait {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: #5d2a2a;
+  color: #f3ead6;
+  border: 1px solid #8a4a3a;
+}
+.sheet .trait-uncommon { background: #8a4a1f; border-color: #c46b2a; }
+.sheet .trait-rare { background: #1f3a73; border-color: #3a62b8; }
+.sheet .trait-unique { background: #5a2a73; border-color: #8a4ab8; }
+.sheet .desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--darkgray);
+  margin: 0 0 0.6rem 0.25rem;
+}
+.sheet .desc p { margin: 0.45rem 0; }
+.sheet .desc hr {
+  border: none;
+  border-top: 1px solid var(--lightgray);
+  margin: 0.6rem 0;
+}
+.sheet .desc ul,
+.sheet .desc ol { margin: 0.3rem 0 0.3rem 1.2rem; }
+.sheet .desc h5,
+.sheet .desc h6 {
+  font-family: var(--headerFont);
+  color: var(--secondary);
+  margin: 0.8rem 0 0.3rem 0;
+}
+.sheet .desc blockquote {
+  border-left: 3px solid var(--secondary);
+  margin: 0.5rem 0;
+  padding-left: 0.75rem;
+  font-style: italic;
+}
+.sheet .desc strong { color: var(--dark); }
+.sheet .roll {
+  padding: 0 0.3rem;
+  border-radius: 4px;
+  background: var(--highlight);
+  border: 1px solid var(--lightgray);
+  white-space: nowrap;
+}
+.sheet .glyph { color: var(--secondary); letter-spacing: -0.1em; }
+.sheet .facts {
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0.4rem 0;
+}
+.sheet .facts b { color: var(--secondary); }
+.sheet a.external { color: var(--secondary); text-decoration: underline dotted; }

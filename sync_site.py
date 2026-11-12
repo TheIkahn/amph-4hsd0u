@@ -5,7 +5,7 @@ Usage: python sync_site.py <vault Amphoreus folder> <quartz content folder>
 What it does to the site copy (the vault itself is never changed):
 - skips videos and canvases
 - moves everything in "Lorekeeper Notes" up one level so the sidebar is shorter
-- hides character secrets (Delmore's Norgorber lines)
+- hides character secrets (Delmore's Norgorber lines, Mayuri's death-vision blurb)
 - turns each Lorekeeper page's "# Heading" into its page title
 - drops the portrait under the banner, since the banner already shows it
 - splits Journal.md into one page per session, in Act / Arc folders
@@ -20,8 +20,7 @@ TITLES = {'A_Travelers_Guide_to_the_Light_Calendar.md': "A Traveler's Guide to t
 
 
 def scrub(rel, text):
-    if rel.endswith('Party/Delmore.md'):
-        text = '\n'.join(l for l in text.split('\n') if 'norgorber' not in l.lower()) + '\n'
+    """Nothing is hidden from the site at the moment; add rules here if that changes."""
     return text
 
 
@@ -342,6 +341,9 @@ def galleries(tracker):
         current = [p for p in md_pages(pa)]
         former_dir = os.path.join(pa, 'Former Members')
         body = cards(pa, current)
+        sheet_dir = os.path.join(pa, 'Character Sheets')
+        if os.path.isdir(sheet_dir):
+            body += '\n\n## Character sheets\n\n' + cards(pa, md_pages(sheet_dir))
         if os.path.isdir(former_dir):
             body += '\n\n## Former members\n\n' + cards(pa, md_pages(former_dir))
         rows = ['| Character | Skill points | 1st Verse full price | Paragon skill |', '| :-- | :-: | :-: | :-- |']
@@ -352,6 +354,455 @@ def galleries(tracker):
             rows.append(f"| [[{name}]] | {i.get('points', '')} | {i.get('verse', '')} | {i.get('paragon', '')} |")
         body += '\n\n## Skill point tracker\n\n' + '\n'.join(rows)
         write_index(pa, 'The Party', 'Who is travelling together right now.', body)
+
+
+# ---------- Character sheets (from the Foundry export macro) ----------
+import glob, html, json
+
+COMPANIONS = {'Vireloth': 'Sir Caerwyn Kyrn', 'Pantera': 'Mayuri'}
+RANKS = ['Untrained', 'Trained', 'Expert', 'Master', 'Legendary']
+COST = {1: '◆', 2: '◆◆', 3: '◆◆◆', '1': '◆', '2': '◆◆', '3': '◆◆◆', 'reaction': '⟲', 'free': '◇'}
+FEAT_GROUPS = [('ancestryfeature', 'Ancestry features'), ('ancestry', 'Ancestry feats'), ('classfeature', 'Class features'),
+               ('class', 'Class feats'), ('skill', 'Skill feats'), ('general', 'General feats'), ('bonus', 'Bonus feats'),
+               ('calling', 'Mythic calling'), ('deityboon', 'Deity boons')]
+SHEET_DIR = 'Party/Character Sheets'
+
+
+def load_sheets():
+    """Newest export of each character, from every .json in the vault's Character Sheets folder."""
+    best = {}
+    for f in glob.glob(os.path.join(src, 'Character Sheets', '*.json')):
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        for a in d.get('actors', []):
+            when = d.get('exported', '')
+            if a['name'] not in best or when > best[a['name']][0]:
+                a['_exported'] = when[:10]
+                best[a['name']] = (when, a)
+    sheets = {k: v[1] for k, v in best.items()}
+    fill_from_foundry_files(sheets)
+    return sheets
+
+
+def fill_from_foundry_files(sheets):
+    """Borrow formatted descriptions and traits from Foundry's own actor files
+    (Character Sheets/Foundry files/*.json) wherever the export lacks them."""
+    raw = {}
+    for f in glob.glob(os.path.join(src, 'Character Sheets', 'Foundry files', '*.json')):
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        if d.get('name') and d.get('items'):
+            raw[d['name']] = {it['name']: it for it in d['items']}
+    for name, a in sheets.items():
+        items = raw.get(name)
+        if not items:
+            continue
+        entries = a.get('feats', []) + a.get('actions', []) + a.get('inventory', [])
+        entries += [s for e in a.get('spellcasting', []) for s in e.get('spells', [])]
+        for x in entries:
+            it = items.get(x['name'])
+            if not it or x.get('html'):
+                continue
+            s = it.get('system', {})
+            x['html'] = (s.get('description') or {}).get('value', '')
+            x.setdefault('traits', (s.get('traits') or {}).get('value', []))
+            x.setdefault('rarity', (s.get('traits') or {}).get('rarity'))
+            if it.get('type') == 'spell':
+                for key, val in (('cast', (s.get('time') or {}).get('value')), ('range', (s.get('range') or {}).get('value')),
+                                 ('target', (s.get('target') or {}).get('value')),
+                                 ('duration', (s.get('duration') or {}).get('value')),
+                                 ('defense', ((s.get('defense') or {}).get('save') or {}).get('statistic'))):
+                    if val and not x.get(key):
+                        x[key] = val
+                area = s.get('area')
+                if area and not x.get('area'):
+                    x['area'] = f"{area.get('value')}-foot {area.get('type')}"
+
+
+def sign(n):
+    return '—' if n is None else (f'+{n}' if n >= 0 else f'−{-n}')
+
+
+def clean_foundry(s):
+    """Turn Foundry inline codes into plain text: [[/r 2d6]]{label} -> label, [[/act x]] -> x, @Check[...] -> ..."""
+    s = str(s or '')
+    s = re.sub(r'\[\[/\w+\s+([^\]]*?)\]\]\{([^}]*)\}', r'\2', s)
+    s = re.sub(r'\[\[/\w+\s+([^\]]*?)\]\]', lambda m: m.group(1).split(' ')[0].replace('-', ' '), s)
+    s = re.sub(r'@\w+\[[^\]]*\]\{([^}]*)\}', r'\1', s)
+    s = re.sub(r'@(\w+)\[([^\]|]*)[^\]]*\]', lambda m: m.group(2).split(':')[-1].split('.')[-1], s)
+    return s.replace('[[', '[').replace(']]', ']')
+
+
+def esc(s):
+    return html.escape(clean_foundry(s))
+
+
+def details(title, body, open_=False):
+    return f'<details{" open" if open_ else ""}><summary>{title}</summary>{body}</details>'
+
+
+# --- Foundry description HTML -> clean, styled HTML ---
+from html.parser import HTMLParser
+from urllib.parse import quote
+
+AON = 'https://2e.aonprd.com/Search.aspx?q='
+GLYPHS = {'1': '◆', '2': '◆◆', '3': '◆◆◆', 'a': '◆', 'd': '◆◆', 't': '◆◆◆', 'r': '⟲', 'f': '◇'}
+
+
+def _bracket(s, i):
+    """Index just past the ']' that closes the '[' at s[i] (handles nesting)."""
+    depth = 0
+    for j in range(i, len(s)):
+        if s[j] == '[':
+            depth += 1
+        elif s[j] == ']':
+            depth -= 1
+            if depth == 0:
+                return j + 1
+    return len(s)
+
+
+def _label_after(s, j):
+    if j < len(s) and s[j] == '{':
+        k = s.find('}', j)
+        if k != -1:
+            return s[j + 1:k], k + 1
+    return None, j
+
+
+def _aon_link(text):
+    return f'<a class="aon external" href="{AON}{quote(text)}" target="_blank" rel="noopener">{html.escape(text)}</a>'
+
+
+def _check(params, label):
+    if label:
+        return f'<span class="roll">{html.escape(label)}</span>'
+    parts = params.split('|')
+    kind, dc, basic = '', '', False
+    for p in parts:
+        if ':' in p:
+            k, v = p.split(':', 1)
+            if k == 'type':
+                kind = v
+            elif k == 'dc':
+                dc = v
+        elif p == 'basic':
+            basic = True
+        elif not kind:
+            kind = p
+    kind = kind.replace('-', ' ').title()
+    text = ' '.join(x for x in [f'DC {dc}' if dc and dc.lstrip('-').isdigit() else '', 'basic' if basic else '', kind] if x)
+    return f'<span class="roll">{html.escape(text or "check")}</span>'
+
+
+def _damage(formula, label):
+    if label:
+        return f'<span class="roll">{html.escape(label)}</span>'
+    out, i = '', 0
+    while i < len(formula):
+        if formula[i] == '[':
+            j = _bracket(formula, i)
+            out += ' ' + formula[i + 1:j - 1].replace(',', ' ')
+            i = j
+        else:
+            out += formula[i]
+            i += 1
+    out = re.sub(r'\s*,\s*', ', ', out).replace('  ', ' ').strip()
+    return f'<span class="roll">{html.escape(out)}</span>'
+
+
+def _template(params, label):
+    if label:
+        return html.escape(label)
+    d = {}
+    for p in params.split('|'):
+        if ':' in p:
+            k, v = p.split(':', 1)
+            d[k] = v
+        else:
+            d.setdefault('type', p)
+    shape, dist = d.get('type', 'area'), d.get('distance', '')
+    return html.escape(f'{dist}-foot {shape}' if dist else shape)
+
+
+def enrich(s):
+    """Replace Foundry inline codes with HTML."""
+    s = str(s or '')
+    out, i = [], 0
+    while i < len(s):
+        m = re.compile(r'@(\w+)\[|\[\[/(\w+)\s').search(s, i)
+        if not m:
+            out.append(s[i:])
+            break
+        out.append(s[i:m.start()])
+        if m.group(1):  # @Word[...]{label}
+            kind = m.group(1)
+            j = _bracket(s, m.end() - 1)
+            inner = s[m.end():j - 1]
+            label, k = _label_after(s, j)
+            if kind in ('UUID', 'Compendium'):
+                name = label or (inner.split('.')[-1] if not re.fullmatch(r'[A-Za-z0-9]{16}', inner.split('.')[-1]) else '')
+                out.append(_aon_link(name) if name else '')
+            elif kind == 'Check':
+                out.append(_check(inner, label))
+            elif kind == 'Damage':
+                out.append(_damage(inner, label))
+            elif kind == 'Template':
+                out.append(_template(inner, label))
+            else:
+                out.append(html.escape(label) if label else '')
+            i = k
+        else:  # [[/r ...]]{label}
+            end = s.find(']]', m.end())
+            end = len(s) if end == -1 else end
+            inner = s[m.end():end].strip()
+            label, k = _label_after(s, end + 2)
+            if m.group(2) == 'act':
+                text = label or inner.split(' ')[0].replace('-', ' ').title()
+                out.append(_aon_link(text))
+            else:
+                out.append(f'<span class="roll">{html.escape(label or inner.split(" #")[0])}</span>')
+            i = k
+    return ''.join(out)
+
+
+class _Clean(HTMLParser):
+    KEEP = {'p', 'strong', 'b', 'em', 'i', 'ul', 'ol', 'li', 'hr', 'br', 'blockquote', 'table', 'thead', 'tbody',
+            'tr', 'td', 'th', 'h5', 'h6', 'div', 'span', 'a', 'sup', 'sub'}
+    HEAD = {'h1': 'h5', 'h2': 'h5', 'h3': 'h5', 'h4': 'h6'}
+    VOID = {'hr', 'br'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out, self.stack, self.glyph, self.skip = [], [], False, 0
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag in ('script', 'style'):
+            self.skip += 1
+            return
+        tag = self.HEAD.get(tag, tag)
+        if tag not in self.KEEP:
+            self.stack.append(None)
+            return
+        if tag == 'span' and 'action-glyph' in (a.get('class') or ''):
+            self.glyph = True
+            self.stack.append('span')
+            self.out.append('<span class="glyph">')
+            return
+        if tag == 'a':
+            href = a.get('href') or ''
+            if a.get('class', '').startswith('aon') or href.startswith('http'):
+                self.out.append(f'<a class="external" href="{html.escape(href)}" target="_blank" rel="noopener">')
+            else:
+                self.stack.append(None)
+                return
+        else:
+            self.out.append(f'<{tag}>')
+        if tag not in self.VOID:
+            self.stack.append(tag)
+
+    def handle_startendtag(self, tag, attrs):
+        tag = self.HEAD.get(tag, tag)
+        if tag in self.VOID:
+            self.out.append(f'<{tag}>')
+
+    def handle_endtag(self, tag):
+        if tag in ('script', 'style'):
+            self.skip = max(0, self.skip - 1)
+            return
+        if tag in self.VOID or not self.stack:
+            return
+        t = self.stack.pop()
+        if t:
+            self.out.append(f'</{t}>')
+        if t == 'span' and self.glyph:
+            self.glyph = False
+
+    def handle_data(self, data):
+        if self.skip:
+            return
+        if self.glyph:
+            data = ''.join(GLYPHS.get(c.lower(), c) for c in data.strip())
+        self.out.append(html.escape(data))
+
+
+def render_desc(raw):
+    if not raw:
+        return ''
+    p = _Clean()
+    p.feed(enrich(raw))
+    p.close()
+    body = ''.join(p.out)
+    body = re.sub(r'(<p>\s*</p>|<div>\s*</div>)', '', body)
+    # one line, so a blank line inside a description can't end the page's HTML block
+    body = re.sub(r'\s*\n\s*', ' ', body)
+    return body.replace('[[', '[').replace(']]', ']')
+
+
+def trait_chips(traits, rarity=None):
+    chips = []
+    if rarity and rarity != 'common':
+        chips.append(f'<span class="trait trait-{esc(rarity)}">{esc(rarity)}</span>')
+    chips += [f'<span class="trait">{esc(t)}</span>' for t in traits or []]
+    return f'<div class="traits">{"".join(chips)}</div>' if chips else ''
+
+
+def item_list(items):
+    """items: list of dicts with name, meta, and optionally html/text, traits, rarity, facts."""
+    out = []
+    for it in items:
+        body = trait_chips(it.get('traits'), it.get('rarity'))
+        if it.get('facts'):
+            body += '<p class="facts">' + ' · '.join(f'<b>{k}</b> {esc(v)}' for k, v in it['facts'] if v) + '</p>'
+        if it.get('html'):
+            body += f'<div class="desc">{render_desc(it["html"])}</div>'
+        elif it.get('text'):
+            body += f'<div class="desc"><p>{esc(it["text"])}</p></div>'
+        meta = it.get('meta') or ''
+        out.append(f'<details class="sheet-entry"><summary><strong>{esc(it["name"])}</strong>'
+                   f'{f" <span class=sheet-meta>{meta}</span>" if meta else ""}</summary>{body}</details>')
+    return ''.join(out)
+
+
+def sheet_html(a, companion=False):
+    lvl = a.get('level')
+    sub = ' · '.join(x for x in [f'Level {lvl}' if lvl is not None else '', a.get('ancestry'),
+                                  a.get('heritage') if a.get('heritage') and a.get('heritage') != a.get('ancestry') else None,
+                                  a.get('background'), a.get('class'), a.get('deity')] if x)
+    hp = a.get('hp') or {}
+    speeds = (a.get('speed') or {}).get('speeds', {}) if isinstance(a.get('speed'), dict) else {}
+    spd = ', '.join(f"{('' if k == 'land' else k + ' ')}{v.get('value')} ft" for k, v in speeds.items()
+                    if isinstance(v, dict) and k != 'travel' and v.get('value'))
+    res = a.get('resources') or {}
+    pts = []
+    for key, label in (('heroPoints', 'Hero'), ('mythicPoints', 'Mythic'), ('focus', 'Focus')):
+        r = res.get(key) or {}
+        if r.get('max'):
+            pts.append(f'{label} {r.get("value", 0)}/{r["max"]}')
+    stats = [('HP', f'{hp.get("value")}/{hp.get("max")}' + (f' (+{hp["temp"]})' if hp.get('temp') else '')),
+             ('AC', a.get('ac')),
+             ('Perception', f'{sign(a["perception"]["mod"])} <small>{RANKS[a["perception"]["rank"]]}</small>'),
+             ('Speed', spd or '—')]
+    if a.get('classDC') and a.get('class') not in ('Animal Companion', 'Eidolon'):
+        stats.append(('Class DC', a['classDC']))
+    for p in pts:
+        label, value = p.split(' ', 1)
+        stats.append((f'{label} points', value))
+    out = [f'<div class="sheet{" sheet-companion" if companion else ""}">',
+           f'<p class="sheet-sub">{esc(sub)}</p>',
+           '<div class="sheet-stats">' + ''.join(f'<div><span>{k}</span><b>{v}</b></div>' for k, v in stats) + '</div>']
+    saves = a.get('saves') or {}
+    out.append('<div class="sheet-row"><h4>Saves</h4><div class="sheet-chips">' + ''.join(
+        f'<div><span>{k.title()}</span><b>{sign(v["mod"])}</b><small>{RANKS[v["rank"]]}</small></div>' for k, v in saves.items()) + '</div></div>')
+    attrs = a.get('attributes') or {}
+    out.append('<div class="sheet-row"><h4>Attributes</h4><div class="sheet-chips">' + ''.join(
+        f'<div><span>{k.upper()}</span><b>{sign(v)}</b></div>' for k, v in attrs.items()) + '</div></div>')
+
+    skills = [s for s in a.get('skills', []) if not s.get('lore')]
+    lores = [s for s in a.get('skills', []) if s.get('lore')]
+
+    def skill_rows(lst):
+        return ''.join(f'<div class="sk r{s["rank"]}"><span>{esc(s["label"])}</span><i>{RANKS[s["rank"]][0]}</i><b>{sign(s["mod"])}</b></div>' for s in lst)
+    out.append('<div class="sheet-row"><h4>Skills</h4><div class="sheet-skills">' + skill_rows(skills) + '</div>'
+               + (('<h4>Lore</h4><div class="sheet-skills">' + skill_rows(lores) + '</div>') if lores else '') + '</div>')
+
+    strikes = []
+    for s in a.get('strikes', []):
+        bonus = ' / '.join(esc(v) for v in s.get('variants') or []) or sign(s.get('mod'))
+        strikes.append(f'<div class="strike"><strong>{esc(s["name"])}</strong><span>{bonus}</span>'
+                       f'<em>{esc(s.get("damage") or "")}</em></div>')
+    if strikes:
+        out.append('<div class="sheet-row"><h4>Strikes</h4><div class="sheet-strikes">' + ''.join(strikes) + '</div></div>')
+
+    iwr = a.get('iwr') or {}
+    defl = [(lbl, ', '.join(iwr.get(k) or [])) for k, lbl in (('immunities', 'Immune'), ('resistances', 'Resist'), ('weaknesses', 'Weak'))]
+    defl = [(l, v) for l, v in defl if v]
+    langs = ', '.join(x.title() for x in a.get('languages') or [])
+    extra = ''.join(f'<p><b>{l}:</b> {esc(v)}</p>' for l, v in defl) + (f'<p><b>Languages:</b> {esc(langs)}</p>' if langs else '')
+    ed, an = a.get('edicts') or [], a.get('anathema') or []
+    if ed:
+        extra += '<p><b>Edicts:</b> ' + esc(' '.join(ed).rstrip(',')) + '</p>'
+    if an:
+        extra += '<p><b>Anathema:</b> ' + esc(' '.join(an).rstrip(',')) + '</p>'
+    if extra:
+        out.append('<div class="sheet-row sheet-notes">' + extra + '</div>')
+
+    acts = [dict(x, meta=COST.get(x.get('cost'), '')) for x in a.get('actions', [])]
+    if acts:
+        out.append(details(f'Actions & reactions ({len(acts)})', item_list(acts)))
+    feats = a.get('feats', [])
+    for cat, label in FEAT_GROUPS:
+        group = sorted((f for f in feats if f.get('category') == cat), key=lambda f: (f.get('level') or 0, f['name']))
+        if group:
+            out.append(details(f'{label} ({len(group)})', item_list(
+                [dict(f, meta=f'Lv {f["level"]}' if f.get('level') else '') for f in group])))
+    for e in a.get('spellcasting', []):
+        spells = sorted(e.get('spells', []), key=lambda s: (s.get('rank') or 0, s['name']))
+        rows = []
+        for s in spells:
+            facts = [('Cast', COST.get(s.get('cast'), s.get('cast'))), ('Range', s.get('range')), ('Area', s.get('area')),
+                     ('Targets', s.get('target')), ('Defense', (s.get('defense') or '').title() or None),
+                     ('Duration', s.get('duration'))]
+            rows.append(dict(s, meta='Cantrip' if 'cantrip' in (s.get('traits') or []) or not s.get('rank') else f'Rank {s["rank"]}',
+                             facts=[f for f in facts if f[1]]))
+        out.append(details(f'{esc(e["name"])} · DC {e.get("dc")} · attack {sign(e.get("attack"))}', item_list(rows)))
+    inv = a.get('inventory', [])
+    if inv:
+        def inv_meta(i):
+            bits = []
+            if (i.get('qty') or 1) != 1:
+                bits.append(f'×{i["qty"]}')
+            if i.get('invested'):
+                bits.append('invested')
+            elif i.get('equipped'):
+                bits.append('equipped')
+            return ' · '.join(bits)
+        order = sorted(inv, key=lambda i: (not i.get('equipped'), i.get('type', ''), i['name']))
+        out.append(details(f'Inventory ({len(inv)})', item_list([dict(i, meta=inv_meta(i)) for i in order])))
+    out.append('</div>')
+    return '\n'.join(out)
+
+
+def build_sheets():
+    sheets = load_sheets()
+    if not sheets:
+        return []
+    made = []
+    pcs = [n for n in sheets if n not in COMPANIONS]
+    folder = os.path.join(dst, *SHEET_DIR.split('/'))
+    os.makedirs(folder, exist_ok=True)
+    for name in sorted(pcs):
+        comp = [c for c, owner in COMPANIONS.items() if owner == name and c in sheets]
+        fm = ['---', f'title: "{name} — Character Sheet"', 'tags: [character-sheet]']
+        if os.path.exists(os.path.join(src, 'Images', f'{name}.png')):
+            fm += [f'banner: "![[{name}.png]]"', 'banner-height: 220', 'banner-y: 20', f'icon-image: "![[{name}-icon.png]]"']
+        fm.append('---')
+        body = [f'*Pathfinder 2e sheet, numbers straight from Foundry (exported {sheets[name].get("_exported", "?")}).*', '',
+                f'[[{name}|← Back to {name}\'s page]]', '', sheet_html(sheets[name])]
+        for c in comp:
+            body += ['', f'## {c}', sheet_html(sheets[c], companion=True)]
+        open(os.path.join(folder, f'{name} (Sheet).md'), 'w', encoding='utf-8', newline='\n').write(
+            '\n'.join(fm) + '\n' + '\n'.join(body) + '\n')
+        made.append(name)
+    return made
+
+
+def link_sheets(made):
+    """Add a 'character sheet' link to each party page that has one."""
+    for name in made:
+        p = os.path.join(dst, 'Party', name + '.md')
+        if not os.path.exists(p):
+            continue
+        t = open(p, encoding='utf-8').read()
+        block = f'> [!example] 📜 Character sheet\n> [[{SHEET_DIR}/{name} (Sheet)|Open {name}\'s full Pathfinder sheet →]]\n\n'
+        anchor = '> [!info] 📋 Identity'
+        t = t.replace(anchor, block + anchor, 1) if anchor in t else t + '\n' + block
+        open(p, 'w', encoding='utf-8', newline='\n').write(t)
 
 
 # ---------- Pages for links that lead nowhere ----------
@@ -467,6 +918,8 @@ for root, dirs, files in os.walk(src):
         rel = os.path.relpath(s, src).replace('\\', '/')
         if rel == 'Skill point tracker.md':
             continue  # shown on the Party page and each character page instead
+        if rel.startswith('Character Sheets/'):
+            continue  # turned into sheet pages by build_sheets()
         if rel == 'Journal.md':
             sessions = split_journal(open(s, encoding='utf-8').read().replace('\r\n', '\n'), dst)
             count += 1
@@ -491,6 +944,8 @@ for root, dirs, files in os.walk(src):
             shutil.copy2(s, d)
         count += 1
 
+sheets_made = build_sheets()
+link_sheets(sheets_made)
 made = fill_missing()
 galleries(tracker)
 open(os.path.join(dst, 'index.md'), 'w', encoding='utf-8', newline='\n').write(home(sessions))

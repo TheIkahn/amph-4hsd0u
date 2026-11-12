@@ -16,6 +16,9 @@ title: "Sir Caerwyn Kyrn"
 > [!quote] At a glance
 > Sir Caerwyn Kyrn Dreadmane has reaped souls under a hundred names for the Lady of Graves, lifetime after lifetime. This is the first journey his steed Vireloth chose rather than him, and the old Dullahan is more than content to follow where it leads.
 
+> [!example] 📜 Character sheet
+> [[Party/Character Sheets/Sir Caerwyn Kyrn (Sheet)|Open Sir Caerwyn Kyrn's full Pathfinder sheet →]]
+
 > [!info] 📋 Identity
 > | | |
 > | :-- | :-- |

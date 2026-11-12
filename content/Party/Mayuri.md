@@ -16,6 +16,9 @@ title: "Mayuri"
 > [!quote] At a glance
 > Mayuri wakes most nights from visions of her own death, each one wearing a different face, while her past frays into two childhoods in two cities, neither of them certain. She chases a rumor of a Golden City that grants a seeker their deepest wish, hoping it might mend the fracture at her core, whether it heals her or finishes what the dreams keep promising.
 
+> [!example] 📜 Character sheet
+> [[Party/Character Sheets/Mayuri (Sheet)|Open Mayuri's full Pathfinder sheet →]]
+
 > [!info] 📋 Identity
 > | | |
 > | :-- | :-- |

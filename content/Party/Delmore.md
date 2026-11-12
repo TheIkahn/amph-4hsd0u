@@ -22,6 +22,7 @@ title: "Delmore"
 > | **Ancestry** | Tengu (Stormtossed) |
 > | **Class** | Inventor · Alchemist |
 > | **Background** | Tinker |
+> | **Faith** | Norgorber |
 > | **Level** | 8 |
 
 > [!abstract] 📈 Progress
@@ -56,6 +57,7 @@ title: "Delmore"
 > - [x] **Minor (Story): "Sample Acquired."** Recover a substance, residue, or biological sample from a notable creature (boss, NPC, anomaly) for later crafting or research. *2 SP*
 > - [x] **Major (Combat): "The Ambient Sacrament."** In a single combat, have at least 3 allies benefiting from your Sacramental elixirs at the same time. *3 SP*
 > - [ ] **Major (Story): "Marcus's Ghost."** Have a meaningful confrontation, conversation, or inner reckoning with the memory of your former mentor. *3 SP*
+> - [ ] **Major (Social): "Norgorber's Hidden Hand."** Identify another secret Norgorber worshipper in Amphoreus or among the party's contacts, and expose, blackmail, or recruit them. *4 SP*
 > - [ ] **Major (Combat): "Communion Strike."** Use Communion Strike to revive an ally from 0 HP, and have that ally land the killing blow on the encounter's biggest threat the same round. *4 SP*
 > - [ ] **Epic: "The Black Sacrament."** Develop a new sacramental cognatogen the party finds both genuinely useful and genuinely terrifying, and convince at least three of them to drink it voluntarily. *1 Gold Star*
-
+> - [ ] **Epic: "The Apothecary's Verdict."** Confront a major Norgorber-aligned figure (high priest, divine herald, avatar) and either gain their explicit blessing on your work or oppose them with your own interpretation of what Norgorber requires. *1 Gold Star*
