@@ -113,6 +113,8 @@ def split_journal(text, out):
     sessions = [s for s in sessions if s['name'].replace('[]', '').strip()]
     for s in sessions:
         s['days'] = session_days(s['lines'])
+        if s['num'] in SESSION_DAYS:
+            s['days'] = [d for d in SESSION_DAYS[s['num']]]
 
     def folder(label):
         # "Act 0: The Prologue (Session 1-24)" -> "Act 0 - The Prologue"
@@ -185,6 +187,14 @@ LC_SEASONS = {
 LC_MONTH_NUM = {m[0].lower(): i for i, m in enumerate(LC_MONTHS)}
 LC_DAYS_IN_MONTH = 31
 DATE_RE = re.compile(r'(\d{1,2})\s+Month of\s+([A-Za-z]+),?\s*(\d{3,5})')
+
+
+# Sessions that played out on more than one day (the rest happen on the last date
+# in their date line). (year, month index, day); month 4 = Joy.
+SESSION_DAYS = {
+    11: [(4931, 4, 8), (4931, 4, 10)],
+    21: [(4931, 4, 21), (4931, 4, 22)],
+}
 
 
 def session_days(lines):
